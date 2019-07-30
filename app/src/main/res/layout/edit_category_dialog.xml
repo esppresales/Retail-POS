@@ -1,0 +1,127 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/popup_bg"
+    android:id="@+id/container"
+    android:paddingBottom="16dp"
+    >
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/edit_category_title"
+        android:id="@+id/textView"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="10dp"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:id="@+id/horizontalSeperatorView"
+        android:layout_below="@+id/textView"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gray_border_bg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Category"
+        android:id="@+id/categoryTv"
+
+        android:textColor="@android:color/black"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="16dp"
+        android:layout_below="@+id/horizontalSeperatorView"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:hint="Add Category"
+        android:singleLine="true"
+        android:maxLines="1"
+        android:padding="10dp"
+        android:inputType="textCapWords"
+        android:focusableInTouchMode="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:maxLength="50"
+        android:background="@drawable/gray_border_bg"
+        android:id="@+id/productCategory"
+        android:layout_below="@+id/categoryTv"
+
+
+        android:layout_marginTop="10dp" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:textColor="@android:color/black"
+        android:text="Description"
+        android:id="@+id/quantity"
+        android:layout_below="@+id/productCategory"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:layout_marginTop="10dp" />
+
+    <EditText
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@drawable/gray_border_bg"
+        android:id="@+id/productDescription"
+        android:layout_below="@+id/quantity"
+        android:layout_marginLeft="10dp"
+        android:layout_marginRight="10dp"
+        android:hint="@string/edit_category_quantity_hint"
+        android:gravity="top"
+        android:lines="4"
+        android:padding="10dp"
+        android:layout_marginTop="10dp" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="32dp"
+        android:id="@+id/horizontalSeperatorView2"
+        android:layout_below="@+id/productDescription"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gray_border_bg" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/edit_category_save_button"
+        android:id="@+id/saveCategory"
+        android:textStyle="bold"
+        android:textColor="@color/header_bar_color_blue"
+        android:layout_below="@+id/horizontalSeperatorView2"
+        android:layout_marginTop="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_alignRight="@+id/horizontalSeperatorView2" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/edit_category_cancel_button"
+        android:id="@+id/cancelDialog"
+        android:layout_marginRight="32dp"
+        android:textStyle="bold"
+        android:textColor="@color/header_bar_color_blue"
+        android:layout_alignTop="@+id/saveCategory"
+        android:layout_toLeftOf="@+id/saveCategory"
+        android:layout_toStartOf="@+id/saveCategory"
+        />
+
+</RelativeLayout>

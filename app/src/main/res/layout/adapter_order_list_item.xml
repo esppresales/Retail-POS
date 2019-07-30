@@ -1,0 +1,74 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/orderNumberTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textColor="@android:color/black"
+        android:textSize="@dimen/textsize"
+        android:text="@string/order_number" />
+
+    <TextView
+        android:id="@+id/orderNumberValueTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/orderNumberTV"
+        android:layout_alignTop="@+id/orderNumberTV"
+        android:layout_alignBottom="@+id/orderNumberTV"
+        android:gravity="left"
+        android:text="#389119789"
+        android:textSize="@dimen/textsize"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/orderReturn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/orderNumberValueTV"
+        android:layout_alignTop="@+id/orderNumberTV"
+        android:layout_alignBottom="@+id/orderNumberTV"
+        android:gravity="left"
+        android:text="(Order Returned)"
+        android:textSize="@dimen/textsize"
+        android:visibility="gone"
+        android:textColor="@android:color/holo_red_light" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/orderNumberTV">
+
+        <TextView
+            android:id="@+id/customerNameTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Richards Garry"
+            android:textSize="@dimen/small_textsize"
+            android:gravity="left"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/orderDateTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="20 Jan 2015"
+            android:gravity="left"
+            android:textSize="@dimen/small_textsize"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/totalAmountTV"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Total Amount:(SGD)7000"
+            android:gravity="left"
+            android:textSize="@dimen/small_textsize"
+            android:textColor="@android:color/black"
+            android:layout_toRightOf="@+id/quantityTV" />
+    </LinearLayout>
+</RelativeLayout>

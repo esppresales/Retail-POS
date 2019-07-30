@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white">
+
+    <TextView
+        android:id="@+id/productNameTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:text="HP Camera Nikon"
+        android:singleLine="true"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/productSKUTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="2"
+        android:layout_marginLeft="5dp"
+        android:singleLine="true"
+        android:text="2342344554"
+        android:gravity="center_vertical"
+        android:textColor="@android:color/black" />
+
+    <TextView
+        android:id="@+id/productPriceTV"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:layout_weight="1"
+        android:text="(SGD) 5000.00"
+        android:layout_marginRight="12dp"
+        android:gravity="center_vertical|right"
+        android:textColor="@android:color/black" />
+
+</LinearLayout>

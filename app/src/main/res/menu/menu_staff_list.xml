@@ -1,0 +1,15 @@
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <item
+        android:id="@+id/view"
+        android:title="@string/view" />
+    <item
+        android:id="@+id/edit"
+        android:title="@string/edit" />
+    <!--<item
+        android:id="@+id/activate"
+        android:title="@string/activate" />
+    <item
+        android:id="@+id/de_activate"
+        android:title="@string/de_activate" />-->
+</menu>

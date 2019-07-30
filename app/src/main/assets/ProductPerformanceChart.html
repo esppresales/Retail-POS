@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="jsapi.js"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn('string','Product Names');
+        dataTable.addColumn('number','Units Sold');
+
+
+        var text = jsonString.getJsonString();
+        console.log(text);
+
+        var topProductName = topProduct.getTopProductName();
+        var price = topProductPrice.getTopProductPrice();
+        var itemSold = totalItemsSold.getTotalItemsSold();
+        console.log(topProductName);
+        document.getElementById("one").innerHTML = itemSold
+        document.getElementById("two").innerHTML = topProductName
+        document.getElementById("three").innerHTML = price
+
+        obj = JSON.parse(text);
+//var arr;
+    var rows = new Array();
+    for (var key in obj) {
+var asd = obj[key];
+for (var key in asd) {
+var asdqwe = asd[key];
+rows.push([asdqwe.name, parseInt(asdqwe.quantity_sold)]);
+
+//arr.push([asdqwe.name, asdqwe.quantity_sold]);
+    
+//alert(asdqwe.name);
+}
+
+dataTable.addRows(rows);
+
+       var options = {
+          title: 'Product Performance',
+          hAxis: {title: 'Product Names', titleTextStyle: {color: 'red'}},
+	      vAxis: {title: 'No of Units sold', titleTextStyle: {color: 'red'}}
+
+ };
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(dataTable, options);
+      }
+}
+
+    </script>
+</head>
+<body>
+<div style="color:#0000FF;width: 1000px ;height: 100px;">
+
+    <div style="float: right;height: 100px;margin-right: 20px"> Total Items Sold: <b
+            id="one"></b><br><br>
+        Top Selling Product: <b id="two"></b><br><br>
+        Top Product Price: <b id="three"></b>
+
+    </div>
+</div>
+<div id="chart_div" style="width: 1000px; height: 500px;"></div>
+
+</body>
+</html>

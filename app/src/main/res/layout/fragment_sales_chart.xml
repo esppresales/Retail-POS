@@ -1,0 +1,144 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    android:id="@+id/container"
+    tools:context="com.printer.epos.rtpl.reports.charts.ProductPerformanceFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_margin="16dp"
+        android:id="@+id/ll"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="Start Date"
+            android:padding="10dp"
+            android:id="@+id/fromDate"
+            android:editable="false"
+            android:singleLine="true"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/gray_border_bg"
+            android:layout_weight=".25" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:hint="End Date"
+            android:id="@+id/toDate"
+            android:editable="false"
+            android:singleLine="true"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/gray_border_bg"
+
+            android:layout_weight=".25" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Get Chart"
+            android:id="@+id/getChart"
+            android:textColor="@android:color/white"
+            android:background="@color/blue_button_color"
+            android:layout_weight=".25" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:padding="10dp"
+            android:layout_marginLeft="10dp"
+            android:text="Export CSV"
+            android:id="@+id/exportCsv"
+            android:textColor="@android:color/white"
+            android:background="@color/blue_button_color"
+            android:layout_weight=".25" />
+
+    </LinearLayout>
+
+    <ScrollView
+        android:id="@+id/scrollView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ll"
+        >
+
+        <RelativeLayout
+            android:padding="16dp"
+            android:layout_width="match_parent"
+            android:layout_height="match_parent">
+
+            <TextView
+                android:id="@+id/totalSales"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_marginLeft="5dp"
+                android:layout_marginRight="1dp"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/topProduct"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="Total sales: "
+                android:layout_alignLeft="@+id/tt"
+                />
+
+            <TextView
+                android:id="@+id/totalTransaction"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/totalSales"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="1dp"
+                android:text="0"/>
+
+            <TextView
+                android:id="@+id/tt"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/totalSales"
+                android:layout_toLeftOf="@+id/totalTransaction"
+                android:layout_marginRight="120dp"
+                android:text="Total transaction: "
+                />
+
+
+
+
+            <com.github.mikephil.charting.charts.BarChart
+                android:layout_width="match_parent"
+                android:layout_height="400dp"
+                android:id="@+id/chartWebView"
+                android:layout_marginTop="10dp"
+                android:layout_below="@+id/totalTransaction"
+                />
+
+
+        </RelativeLayout>
+
+    </ScrollView>
+
+    <!--<WebView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:id="@+id/chartWebView"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll"></WebView>
+-->
+
+</RelativeLayout>

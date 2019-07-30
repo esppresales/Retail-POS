@@ -1,0 +1,428 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background_color">
+
+    <ScrollView
+        android:id="@+id/formScroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/gray_border_bg_bottom_left_right">
+
+
+        <RelativeLayout
+            android:id="@+id/form"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:background="@drawable/gray_border_bg_bottom_left_right">
+
+            <TextView
+                android:id="@+id/membershipIdTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img"
+                android:textColor="@android:color/black"
+                android:text="@string/membership_id" />
+
+            <EditText
+                android:id="@+id/membershipID"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:inputType="number"
+                android:layout_below="@id/membershipIdTV"
+                android:background="@drawable/gray_border_bg" />
+
+            <TextView
+                android:id="@+id/customerNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@id/img"
+                android:layout_toRightOf="@id/membershipID"
+                android:textColor="@android:color/black"
+                android:text="@string/customer_name" />
+
+            <EditText
+                android:id="@+id/customerNameET"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:gravity="center_vertical"
+                android:singleLine="true"
+                android:layout_alignLeft="@id/customerNameTV"
+                android:layout_below="@id/customerNameTV"
+                android:background="@drawable/gray_border_bg" />
+
+            <Button
+                android:id="@+id/addItemButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text=""
+                android:background="@drawable/add_item"
+                android:layout_alignParentRight="true"
+                android:layout_alignTop="@+id/customerNameET" />
+
+            <TextView
+                android:id="@+id/productNameTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/addItemButton"
+                android:text="@string/product_name"
+                android:gravity="left"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/unitPriceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/productNameTV"
+                android:layout_toRightOf="@+id/productNameTV"
+                android:text="@string/unit_price"
+                android:gravity="center_horizontal"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/quantityTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_toRightOf="@+id/unitPriceTV"
+                android:layout_alignTop="@+id/unitPriceTV"
+                android:text="@string/quantity"
+                android:textStyle="bold"
+                android:textColor="@android:color/black" />
+
+            <TextView
+                android:id="@+id/totalPriceTV"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_alignTop="@+id/unitPriceTV"
+                android:layout_toRightOf="@+id/quantityTV"
+                android:text="@string/total_price"
+                android:textStyle="bold"
+                android:gravity="center_horizontal"
+                android:textColor="@android:color/black" />
+
+            <View
+                android:id="@+id/listSeparator1"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/totalPriceTV"
+                android:layout_marginTop="2dp"
+                android:background="@color/gray_text_color" />
+
+            <RelativeLayout
+                android:id="@+id/orderListViewRel"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/listSeparator1">
+
+                <TextView
+                    android:id="@+id/emptyTextView"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:text="No Item Added."
+                    android:layout_centerHorizontal="true"
+                    android:gravity="center"
+                    android:textColor="@android:color/black" />
+
+                <ListView
+                    android:id="@+id/orderListView"
+                    android:layout_width="match_parent"
+                    android:divider="@color/border_color_gray"
+                    android:dividerHeight="1dp"
+                    android:layout_height="wrap_content"></ListView>
+            </RelativeLayout>
+
+            <View
+                android:id="@+id/listSeparator"
+                android:layout_below="@+id/orderListViewRel"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="@color/gray_text_color" />
+
+            <RelativeLayout
+                android:id="@+id/amountLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/listSeparator"
+                android:layout_alignParentRight="true">
+
+                <View
+                    android:id="@+id/centerView"
+                    android:layout_centerHorizontal="true"
+                    android:layout_width="1dp"
+                    android:layout_height="1dp" />
+
+                <TextView
+                    android:id="@+id/gstRegNoTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gst_reg_no"
+                    android:layout_toLeftOf="@+id/centerView"
+                    android:textColor="@color/gray_text_color"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:id="@+id/gstRegNoValueTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:layout_toRightOf="@+id/centerView"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:id="@+id/grossAmountTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/gross_amount"
+                    android:layout_toLeftOf="@+id/centerView"
+                    android:textColor="@color/gray_text_color"
+                    android:layout_below="@+id/gstRegNoTV"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:id="@+id/grossAmountValueTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="(SGD)0.00"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:layout_below="@+id/gstRegNoTV"
+                    android:layout_toRightOf="@+id/centerView"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/discountAmountTV"
+                    android:layout_below="@+id/grossAmountTV"
+                    android:text="@string/discount_amount"
+                    android:layout_toLeftOf="@+id/centerView"
+                    android:textColor="@color/gray_text_color"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/discountAmountValueTV"
+                    android:text="(SGD)0.00"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:layout_below="@+id/grossAmountTV"
+                    android:layout_toRightOf="@+id/centerView"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/couponAmountTV"
+                    android:layout_below="@+id/discountAmountTV"
+                    android:text="@string/coupon_amount"
+                    android:layout_toLeftOf="@+id/centerView"
+                    android:textColor="@color/gray_text_color"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/couponAmountValueTV"
+                    android:text="0.00"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:layout_below="@+id/discountAmountTV"
+                    android:layout_toRightOf="@+id/centerView"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/redeemeAmountTV"
+                    android:layout_below="@+id/couponAmountTV"
+                    android:text="@string/redeemed_amount"
+                    android:textSize="@dimen/small_textsize"
+                    android:layout_toLeftOf="@+id/centerView"
+                    android:textColor="@color/gray_text_color" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/redeemeAmountValueTV"
+                    android:text="0.00"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:layout_below="@+id/couponAmountTV"
+                    android:layout_toRightOf="@+id/centerView"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/taxTV"
+                    android:layout_below="@+id/redeemeAmountTV"
+                    android:text="@string/tax"
+                    android:layout_toLeftOf="@+id/centerView"
+                    android:textColor="@color/gray_text_color"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/taxValueTV"
+                    android:text="(SGD)0.00"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:layout_below="@+id/redeemeAmountTV"
+                    android:layout_toRightOf="@+id/centerView"
+                    android:textColor="@android:color/black"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/netAmountTV"
+                    android:layout_below="@+id/taxTV"
+                    android:text="@string/net_amount"
+                    android:layout_toLeftOf="@+id/centerView"
+                    android:textColor="@color/gray_text_color"
+                    android:textSize="@dimen/small_textsize" />
+
+                <TextView
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:id="@+id/netAmountValueTV"
+                    android:text="(SGD)0.00"
+                    android:layout_alignParentRight="true"
+                    android:gravity="right"
+                    android:layout_below="@+id/taxTV"
+                    android:layout_toRightOf="@+id/centerView"
+                    android:textColor="@color/green_text_color"
+                    android:textSize="@dimen/small_textsize" />
+
+                <Button
+                    android:id="@+id/putOnHoldButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/put_on_hold"
+                    android:layout_below="@+id/netAmountTV"
+                    android:textColor="@android:color/white"
+                    android:background="@drawable/blue_button"
+                    android:layout_toLeftOf="@+id/centerView" />
+
+                <Button
+                    android:id="@+id/completeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/complete"
+                    android:textColor="@android:color/white"
+                    android:layout_below="@+id/netAmountTV"
+                    android:background="@drawable/orange_button"
+                    android:layout_toRightOf="@+id/centerView" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:id="@+id/pointsLayout"
+                android:layout_width="wrap_content"
+                android:layout_height="match_parent"
+                android:layout_below="@+id/listSeparator"
+                android:layout_alignTop="@+id/amountLayout"
+                android:layout_toLeftOf="@+id/amountLayout"
+                android:layout_alignBottom="@+id/amountLayout"
+                android:gravity="center_vertical">
+
+                <TextView
+                    android:id="@+id/gotSGDTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/white"
+                    android:gravity="center_vertical"
+                    android:text="@string/got_sgd"
+                    android:textSize="@dimen/small_textsize"
+                    android:layout_toRightOf="@+id/couponCodeApplyButton" />
+
+                <TextView
+                    android:id="@+id/couponCodeTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:text="@string/coupon_code"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/couponCodeET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:layout_toRightOf="@+id/redeemPointsTV"
+                    android:background="@drawable/gray_border_bg" />
+
+                <Button
+                    android:id="@+id/couponCodeApplyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apply"
+                    android:background="@color/gray_button_color"
+                    android:textColor="@android:color/white"
+                    android:layout_toRightOf="@+id/couponCodeET"
+                    android:layout_alignTop="@+id/couponCodeET" />
+
+                <TextView
+                    android:id="@+id/redeemPointsTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/couponCodeTV"
+                    android:layout_alignLeft="@+id/couponCodeTV"
+                    android:text="@string/redeem_points"
+                    android:gravity="center_vertical"
+                    android:textColor="@android:color/black" />
+
+                <EditText
+                    android:id="@+id/redeemPointsET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:layout_below="@+id/couponCodeTV"
+                    android:singleLine="true"
+                    android:inputType="number"
+                    android:layout_alignLeft="@+id/couponCodeET"
+                    android:background="@drawable/gray_border_bg" />
+
+                <Button
+                    android:id="@+id/redeemPointsApplyButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="@string/apply"
+                    android:layout_alignRight="@+id/couponCodeApplyButton"
+                    android:layout_alignLeft="@+id/couponCodeApplyButton"
+                    android:layout_below="@+id/gotSGDTV"
+                    android:background="@color/gray_button_color"
+                    android:textColor="@android:color/white"
+                    android:layout_toRightOf="@+id/redeemPointsET"
+                    android:layout_alignTop="@+id/redeemPointsET" />
+
+                <TextView
+                    android:id="@+id/pointsTV"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:text="Points\n0"
+                    android:layout_alignBottom="@+id/redeemPointsTV"
+                    android:layout_toLeftOf="@+id/redeemPointsTV"
+                    android:background="@drawable/gray_circular_button"
+                    android:gravity="center"
+                    android:textColor="@android:color/white" />
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

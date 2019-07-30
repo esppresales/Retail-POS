@@ -1,0 +1,625 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/form"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background_color"
+    tools:context="com.printer.epos.rtpl.PlaceOrderFragment">
+
+    <ScrollView
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentTop="true"
+        android:fillViewport="true">
+
+        <RelativeLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
+
+            <EditText
+                android:id="@+id/search"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="8dp"
+                android:background="@drawable/gray_border_bg"
+                android:drawableRight="@drawable/search_icon"
+                android:hint="Search by phone number/id"
+                android:imeOptions="actionSearch"
+                android:padding="10dp"
+                android:singleLine="true" />
+
+            <LinearLayout
+                android:id="@+id/namell"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/search"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".3"
+                    android:text="Member Name"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/customerNameET"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".7"
+                    android:background="@drawable/gray_border_bg"
+                    android:inputType="textPersonName"
+                    android:padding="10dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/idll"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/namell"
+                android:layout_marginLeft="8dp"
+                android:layout_marginTop="8dp"
+                android:orientation="horizontal"
+                android:weightSum="1">
+
+                <TextView
+                    android:layout_width="0dp"
+                    android:layout_height="50dp"
+                    android:layout_weight=".3"
+                    android:text="Membership Id/Phone"
+                    android:textColor="@android:color/black"
+                    android:textSize="13sp" />
+
+                <EditText
+                    android:id="@+id/membership_idET"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".7"
+                    android:background="@drawable/gray_border_bg"
+                    android:inputType="number"
+                    android:padding="10dp"
+                    android:singleLine="true" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/horizontalSeperatorView"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_below="@+id/idll"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="12dp"
+                android:background="@drawable/gray_border_bg" />
+
+            <TextView
+                android:id="@+id/pointsTV"
+                android:layout_width="60dp"
+                android:layout_height="60dp"
+                android:layout_below="@+id/horizontalSeperatorView"
+                android:layout_marginLeft="5dp"
+                android:layout_marginTop="16dp"
+                android:background="@drawable/gray_circular_button"
+                android:gravity="center"
+                android:text="0\nPoints"
+                android:textColor="@android:color/white" />
+
+
+            <Button
+                android:id="@+id/couponApply"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/horizontalSeperatorView"
+                android:layout_marginTop="8dp"
+                android:background="@color/gray_button_color"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+
+                android:paddingTop="10dp"
+                android:text="Apply"
+                android:textColor="@android:color/white"
+                android:textSize="14sp" />
+
+
+            <Button
+                android:id="@+id/couponRemove"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/horizontalSeperatorView"
+                android:layout_marginTop="8dp"
+                android:background="@color/orange_button_color"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="Remove"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+            <Spinner
+                android:id="@+id/couponCodeEt"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/horizontalSeperatorView"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="8dp"
+                android:layout_toLeftOf="@+id/couponApply"
+                android:background="@drawable/gray_border_bg"
+                android:padding="10dp"
+                android:visibility="visible" />
+
+            <TextView
+                android:id="@+id/cCode"
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/horizontalSeperatorView"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="8dp"
+                android:layout_toLeftOf="@+id/couponCodeEt"
+                android:gravity="center"
+                android:text="Coupon code"
+                android:textColor="@android:color/black"
+                android:textSize="13sp" />
+
+
+            <Button
+                android:id="@+id/redeemApply"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+
+                android:layout_below="@+id/couponApply"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray_button_color"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="Apply"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:visibility="visible" />
+
+            <Button
+                android:id="@+id/redeemRemove"
+                android:layout_width="80dp"
+                android:layout_height="40dp"
+                android:layout_alignParentRight="true"
+
+                android:layout_below="@+id/couponApply"
+                android:layout_marginTop="16dp"
+                android:background="@color/orange_button_color"
+                android:paddingBottom="10dp"
+                android:paddingLeft="10dp"
+                android:paddingRight="10dp"
+                android:paddingTop="10dp"
+                android:text="Remove"
+                android:textColor="@android:color/white"
+                android:textSize="12sp"
+                android:visibility="gone" />
+
+
+            <EditText
+                android:id="@+id/redeemAmountEt"
+                android:layout_width="120dp"
+                android:layout_height="40dp"
+                android:layout_below="@+id/couponApply"
+                android:layout_marginRight="16dp"
+                android:layout_marginTop="16dp"
+                android:layout_toLeftOf="@+id/redeemApply"
+                android:background="@drawable/gray_border_bg"
+                android:inputType="number"
+                android:padding="10dp"
+                android:singleLine="true"
+                android:visibility="visible" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="40dp"
+                android:layout_below="@+id/couponApply"
+                android:layout_marginRight="10dp"
+                android:layout_marginTop="18dp"
+                android:layout_toLeftOf="@+id/redeemAmountEt"
+                android:gravity="center"
+                android:text="Redemption Amount"
+                android:textColor="@android:color/black"
+                android:textSize="13sp" />
+
+            <TextView
+                android:id="@+id/orderSummary"
+                android:layout_width="match_parent"
+                android:layout_height="40dp"
+                android:layout_alignParentLeft="true"
+                android:layout_below="@+id/redeemApply"
+                android:layout_marginTop="8dp"
+                android:background="@color/blue_button_color"
+                android:gravity="center"
+                android:paddingLeft="10dp"
+                android:text="Order Summary"
+                android:textColor="@android:color/white"
+                android:textSize="14sp"
+                android:textStyle="bold" />
+
+            <!--<LinearLayout
+                android:id="@+id/paymentTypeLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/orderSummary">
+
+                <TextView
+                    android:id="@+id/paymentTypeTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="Payment Type"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:id="@+id/paymentTypeValueTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="right"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>-->
+
+            <LinearLayout
+                android:id="@+id/firstLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/orderSummary"
+                >
+                <TextView
+                    android:id="@+id/subTotalTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_sub_total"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+
+                <TextView
+                    android:id="@+id/subTotalValueTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="right"
+                    android:text="0.00"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/secondLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/firstLL">
+
+
+                <TextView
+                    android:id="@+id/amountBeforeGSTTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_amount_before_gst"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    />
+
+                <TextView
+                    android:id="@+id/amountBeforeGSTValueTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="0.00"
+                    android:gravity="right"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/thirdLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/secondLL">
+
+
+                <TextView
+                    android:id="@+id/discountAmountTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/amountBeforeGSTTV"
+                    android:text="Discount Amount"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/discountAmountValueTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="right"
+                    android:text="0.00"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fourthLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/thirdLL">
+
+                <TextView
+                    android:id="@+id/couponAmountTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="@string/coupon_amount_value"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/couponAmountValueTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:gravity="right"
+                    android:textColor="@android:color/black"
+                    android:text="0.00"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/fiveLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/fourthLL">
+
+                <TextView
+                    android:id="@+id/redeemAmountTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="Redemption Amount"
+                    android:textSize="16sp"
+                    android:textColor="@android:color/black"
+                    />
+
+                <TextView
+                    android:id="@+id/redeemAmountValueTV"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_weight=".5"
+                    android:text="0.00"
+                    android:gravity="right"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/sixLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/fiveLL">
+
+
+                <TextView
+                    android:id="@+id/amountAfterDiscountTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@+id/redeemeAmountTV"
+                    android:text="@string/text_amount_after_discount"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/amountAfterDiscountValueTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:gravity="right"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/seventhLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/sixLL">
+
+
+                <TextView
+                    android:id="@+id/gstInclusiveTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_gst_inclusive"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+                <TextView
+                    android:id="@+id/gstInclusiveValueTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:gravity="right"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <LinearLayout
+                android:id="@+id/eighthLL"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:weightSum="1"
+                android:layout_marginTop="10dp"
+                android:paddingLeft="20dp"
+                android:paddingRight="10dp"
+                android:layout_below="@+id/seventhLL">
+
+
+                <TextView
+                    android:id="@+id/amountIncludeGSTTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="@string/text_amount_gst_inclusive"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp"
+                    android:layout_marginRight="5dp"
+                    />
+
+
+                <TextView
+                    android:id="@+id/amountIncludeGSTValueTV"
+                    android:layout_width="0dp"
+                    android:layout_weight=".5"
+                    android:layout_height="wrap_content"
+                    android:text="0.00"
+                    android:gravity="right"
+                    android:textColor="@android:color/black"
+                    android:textSize="16sp" />
+
+            </LinearLayout>
+
+            <Button
+                android:id="@+id/putOnHoldButton"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/eighthLL"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_toLeftOf="@+id/completeButton"
+                android:background="@color/gray_button_color"
+                android:padding="10dp"
+                android:text="PUT ON HOLD"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/completeButton"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/eighthLL"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/orange_button_color"
+                android:padding="10dp"
+                android:text="CHECKOUT"
+                android:textColor="@android:color/white" />
+
+            <Button
+                android:id="@+id/cancelOrderButton"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_below="@+id/eighthLL"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:layout_toLeftOf="@+id/completeButton"
+                android:background="@color/gray_button_color"
+                android:padding="10dp"
+                android:text="CANCEL ORDER"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/payButton"
+                android:layout_width="140dp"
+                android:layout_height="50dp"
+                android:layout_alignParentRight="true"
+                android:layout_below="@+id/eighthLL"
+                android:layout_marginRight="32dp"
+                android:layout_marginTop="16dp"
+                android:background="@color/orange_button_color"
+                android:padding="10dp"
+                android:text="PAY"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+            <Button
+                android:id="@+id/onHoldOrderButton"
+                android:layout_width="312dp"
+                android:layout_height="50dp"
+                android:layout_alignLeft="@+id/cancelOrderButton"
+                android:layout_below="@+id/cancelOrderButton"
+                android:layout_marginTop="16dp"
+                android:background="@color/gray_button_color"
+                android:padding="10dp"
+                android:text="PUT ON HOLD"
+                android:textColor="@android:color/white"
+                android:visibility="gone" />
+
+        </RelativeLayout>
+
+
+    </ScrollView>
+
+
+</RelativeLayout>

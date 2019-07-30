@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background_color">
+
+    <RelativeLayout
+        android:id="@+id/formView"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:background="@android:color/white">
+
+        <RelativeLayout
+            android:id="@+id/buttonLayout"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:paddingLeft="1dp"
+            android:paddingRight="1dp"
+            android:paddingTop="1dp"
+            android:background="@drawable/gray_border_bg_top_left_right"
+            android:gravity="center_horizontal">
+
+            <Button
+                android:id="@+id/completedOrderButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/order_list_button_selector"
+                android:text="@string/completed_order"
+                android:textColor="@color/tab_order_text_selector" />
+
+            <Button
+                android:id="@+id/onHoldOrderButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="@string/on_hold"
+                android:layout_toRightOf="@+id/completedOrderButton"
+                android:textColor="@color/tab_order_text_selector"
+                android:background="@drawable/order_list_button_selector" />
+        </RelativeLayout>
+
+        <View
+            android:id="@+id/divider"
+            android:layout_alignLeft="@+id/orderListView"
+            android:layout_alignRight="@+id/orderListView"
+            android:layout_below="@+id/buttonLayout"
+            android:layout_width="match_parent"
+            android:background="@color/order_button_bg"
+            android:layout_height="1dp"
+            android:layout_centerHorizontal="true" />
+
+
+        <ListView
+            android:id="@+id/orderListView"
+            android:layout_width="fill_parent"
+            android:layout_below="@+id/divider"
+            android:layout_height="wrap_content"
+            android:divider="@color/gray_background_color"
+            android:dividerHeight="1dp" />
+
+
+    </RelativeLayout>
+
+    <com.getbase.floatingactionbutton.AddFloatingActionButton
+        android:id="@+id/pink_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_plusIconColor="@color/plus_icon_color"
+        fab:fab_colorNormal="@color/pink"
+        fab:fab_colorPressed="@color/pink_pressed"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+
+         />
+</RelativeLayout>

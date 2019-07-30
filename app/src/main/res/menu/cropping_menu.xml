@@ -1,0 +1,58 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto">
+    <item
+        android:id="@+id/action_ratio_fit_image"
+        android:orderInCategory="100"
+        android:title="Ratio Fit Image"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ratio_4_3"
+        android:orderInCategory="100"
+        android:title="Ratio 4:3"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ratio_3_4"
+        android:orderInCategory="100"
+        android:title="Ratio 3:4"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ratio_1_1"
+        android:orderInCategory="100"
+        android:title="Ratio 1:1"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ratio_16_9"
+        android:orderInCategory="100"
+        android:title="Ratio 16:9"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ratio_9_16"
+        android:orderInCategory="100"
+        android:title="Ratio 9:16"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_ratio_free"
+        android:orderInCategory="100"
+        android:title="Ratio Free"
+        app:showAsAction="never" />
+    <item
+        android:id="@+id/action_circle"
+        android:orderInCategory="100"
+        android:title="Circle"
+        app:showAsAction="never" />
+
+    <item
+        android:id="@+id/action_cancel"
+        android:orderInCategory="100"
+        android:title="  Cancel  "
+        app:showAsAction="always" />
+    <item
+        android:id="@+id/action_done"
+        android:orderInCategory="100"
+        android:title="  Done  "
+        app:showAsAction="always" />
+
+    <!--never-->
+    <!--always-->
+</menu>

@@ -1,0 +1,52 @@
+<resources xmlns:android="http://schemas.android.com/apk/res/android">
+
+
+    <style name="ThemeCropper" parent="Theme.AppCompat.Light.NoActionBar"><!--DarkActionBar-->
+        <!-- Customize your theme here. -->
+        <item name="colorPrimary">@color/colorPrimary</item>
+        <item name="colorPrimaryDark">@color/colorPrimaryDark</item>
+        <item name="colorAccent">@color/colorAccent</item>
+        <item name="android:windowActionBar">false</item>
+    </style>
+
+    <!-- Base application theme. -->
+    <style name="AppTheme" parent="android:Theme.Holo.Light.NoActionBar">
+
+        <item name="android:textSize">@dimen/textsize</item>
+        <item name="android:typeface">serif</item>
+        <item name="android:windowActionBar">true</item>
+        <item name="android:actionBarStyle">@style/MyActionBar</item>
+        <!-- Customize your theme here. -->
+    </style>
+    <!-- ActionBar styles -->
+    <style name="MyActionBar" parent="@android:style/Widget.Holo.Light.ActionBar.Solid.Inverse">
+        <item name="android:background">@color/header_bar_color_blue</item>
+        <item name="android:titleTextStyle">@style/MyActionBarTextStyle</item>
+        <item name="android:icon">@android:color/transparent</item>
+    </style>
+    <!-- ActionBar styles -->
+    <style name="MyActionBarTextStyle" parent="@android:style/TextAppearance">
+        <item name="android:textColor">@android:color/white</item>
+        <item name="android:textStyle">normal</item>
+        <item name="android:textSize">@dimen/heading_textsize</item>
+    </style>
+
+    <!-- Radio Button Style-->
+    <style name="RadioButton" parent="@android:style/Widget.CompoundButton.RadioButton">
+        <item name="android:drawableLeft">@drawable/radio_button_selector</item>
+    </style>
+
+    <!-- CheckBox Button Style-->
+    <style name="CheckBox" parent="@android:style/Widget.CompoundButton.CheckBox">
+        <item name="android:drawableLeft">@drawable/check_box_selector</item>
+    </style>
+
+
+
+    <style name="DialogAnimation">
+        <item name="android:windowEnterAnimation">@android:anim/slide_in_left</item>
+        <item name="android:windowExitAnimation">@android:anim/slide_out_right</item>
+    </style>
+
+
+</resources>

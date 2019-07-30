@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLL"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp"
+        android:layout_below="@+id/horizontalSeperatorView"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:textColor="@android:color/black"
+            android:text="Code" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:textColor="@android:color/black"
+            android:text="Coupon Amount" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/firstLL"
+        android:id="@+id/secondLL"
+        android:weightSum="2">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:id="@+id/code"
+            android:singleLine="true"
+            android:inputType="text"
+            android:maxLength="20"
+            android:background="@drawable/gray_border_bg"
+            android:padding="10dp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:layout_marginLeft="16dp"
+            android:inputType="numberDecimal"
+            android:singleLine="true"
+            android:background="@drawable/gray_border_bg"
+            android:id="@+id/amount"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:id="@+id/currency"
+            android:text="SGD"
+            android:textColor="@android:color/black"
+            android:padding="10dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/secondLL"
+        android:text="Validity"
+        android:id="@+id/validityTv"
+        android:textColor="@android:color/black"
+        android:layout_marginBottom="6dp" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_below="@+id/validityTv"
+        android:id="@+id/thirdLL"
+        android:weightSum="2">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:hint="Start Date"
+            android:id="@+id/startDate"
+            android:background="@drawable/gray_border_bg"
+            android:editable="false"
+            android:focusableInTouchMode="false"
+            android:singleLine="true"
+            android:padding="10dp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:hint="End Date"
+            android:id="@+id/endDate"
+            android:editable="false"
+            android:focusableInTouchMode="false"
+            android:singleLine="true"
+            android:background="@drawable/gray_border_bg"
+
+            android:padding="10dp" />
+    </LinearLayout>
+
+
+</RelativeLayout>

@@ -1,0 +1,98 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:fab="http://schemas.android.com/apk/res-auto"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+    android:background="@color/gray_background_color">
+
+    <LinearLayout
+        android:id="@+id/ListHeading"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:background="@android:color/white"
+        android:gravity="center_vertical">
+
+        <TextView
+            android:id="@+id/heading_name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Name"
+            android:paddingLeft="10dp"
+            android:textColor="@android:color/black"/>
+
+        <!--<TextView
+            android:id="@+id/heading_mobile"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Mobile"
+            android:textColor="@android:color/black"/>-->
+
+        <TextView
+            android:id="@+id/heading_username"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/username"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/heading_role"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="@string/role"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/heading_last_login"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Last Login"
+            android:textColor="@android:color/black"/>
+
+        <TextView
+            android:id="@+id/heading_status"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Status"
+            android:textColor="@android:color/black"/>
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_below="@+id/ListHeading"
+        android:divider="@color/gray_background_color"
+        android:dividerHeight="1dp"
+        android:background="#ffffff" />
+
+    <com.getbase.floatingactionbutton.AddFloatingActionButton
+        android:id="@+id/pink_icon"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        fab:fab_plusIconColor="@color/plus_icon_color"
+        fab:fab_colorNormal="@color/pink"
+        fab:fab_colorPressed="@color/pink_pressed"
+        android:layout_alignParentBottom="true"
+        android:layout_alignParentRight="true"
+        android:layout_marginRight="36dp"
+        android:layout_marginBottom="16dp" />
+
+    <ImageView
+        android:id="@+id/expanded_image"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout_marginTop="32dp"
+        android:layout_marginBottom="32dp"
+        android:visibility="invisible"
+        />
+
+
+</RelativeLayout>

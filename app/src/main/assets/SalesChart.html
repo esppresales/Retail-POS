@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <script type="text/javascript" src="jsapi.js"></script>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.setOnLoadCallback(drawChart);
+      function drawChart() {
+        var dataTable = new google.visualization.DataTable();
+        dataTable.addColumn('string','Employee Names');
+        dataTable.addColumn('number','Total Sales');
+
+
+        var text = jsonString.getJsonString();
+        console.log(text);
+
+        obj = JSON.parse(text);
+
+        var transactionData = totalTransaction.getTotalTransactionData();
+        var totalSalesData = totalSales.getTotalSalesData();
+
+        document.getElementById("one").innerHTML = totalSalesData
+        document.getElementById("two").innerHTML = transactionData
+//var arr;
+    var rows = new Array();
+    for (var key in obj) {
+var asd = obj[key];
+for (var key in asd) {
+var asdqwe = asd[key];
+rows.push([asdqwe.employee_name, parseFloat(asdqwe.employee_total_sales)]);
+
+//arr.push([asdqwe.name, asdqwe.quantity_sold]);
+
+//alert(asdqwe.name);
+}
+
+dataTable.addRows(rows);
+
+
+var options = {
+          title: 'Sales Chart',
+          hAxis: {title: 'Employees', titleTextStyle: {color: 'red'}},
+	  vAxis: {title: 'Total Amount', titleTextStyle: {color: 'red'}}
+
+ };
+
+
+        var chart = new google.visualization.ColumnChart(document.getElementById('chart_div'));
+        chart.draw(dataTable, options);
+      }
+}
+
+    </script>
+</head>
+<body>
+<div style="color:#0000FF;width: 1000px ;height: 75px;">
+
+    <div style="float: right;height: 75px;margin-right: 20px"> Total Sales: <b id="one"></b><br><br>
+        Total Transaction: <b id="two"></b><br>
+    </div>
+</div>
+<div id="chart_div" style="width: 1000px; height: 500px;"></div>
+
+</body>
+</html>

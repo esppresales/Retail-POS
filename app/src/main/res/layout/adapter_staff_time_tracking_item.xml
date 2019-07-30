@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="horizontal"
+    android:layout_width="match_parent"
+    android:paddingTop="10dp"
+    android:paddingBottom="10dp"
+    android:weightSum="5"
+    android:layout_height="match_parent">
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="02 May 2015"
+        android:gravity="left"
+        android:id="@+id/date"
+        android:textColor="@android:color/black"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="Paco Xiao"
+        android:id="@+id/employeeName"
+        android:gravity="left"
+        android:singleLine="true"
+        android:textColor="@android:color/black"
+        android:layout_weight="1.2" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="00.00"
+        android:gravity="left"
+        android:id="@+id/inTime"
+        android:textColor="@android:color/black"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="00:00"
+        android:id="@+id/outTime"
+        android:gravity="left"
+        android:textColor="@android:color/black"
+        android:layout_weight="1" />
+
+    <TextView
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:textStyle="bold"
+        android:text="00:00"
+        android:id="@+id/duration"
+        android:gravity="left"
+        android:textColor="@android:color/black"
+        android:layout_weight="1" />
+
+
+</LinearLayout>

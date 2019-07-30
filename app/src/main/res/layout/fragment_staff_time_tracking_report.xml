@@ -1,0 +1,99 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background_color">
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/titleRL"
+        android:background="@android:color/white">
+
+        <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Staff Time Tracking"
+        android:id="@+id/title"
+        android:layout_margin="10dp"
+        android:textStyle="bold"
+        android:textColor="@color/text_color_blue"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/title"
+        android:layout_marginLeft="10dp"
+        android:id="@+id/columnNameTitle"
+        android:layout_marginRight="10dp"
+        android:orientation="horizontal"
+        android:weightSum="5">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Date"
+            android:gravity="left"
+            android:textColor="@android:color/black"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Employee Name"
+            android:gravity="left"
+            android:textColor="@android:color/black"
+            android:layout_weight="1.2" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="In Time"
+            android:gravity="left"
+            android:textColor="@android:color/black"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Out Time"
+            android:gravity="left"
+            android:textColor="@android:color/black"
+            android:layout_weight="1" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:textStyle="bold"
+            android:text="Duration (Hrs.)"
+            android:gravity="left"
+            android:textColor="@android:color/black"
+            android:layout_weight="1" />
+    </LinearLayout>
+
+        <ListView
+            android:layout_width="match_parent"
+            android:layout_height="fill_parent"
+            android:id="@+id/list"
+            android:layout_below="@+id/columnNameTitle"
+            android:divider="@color/gray_background_color"
+            android:dividerHeight="1dp"
+
+            android:background="@drawable/gray_border_bg_bottom_left_right"
+            android:layout_marginTop="10dp"
+            android:layout_marginBottom="20dp" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

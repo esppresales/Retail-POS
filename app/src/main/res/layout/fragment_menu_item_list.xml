@@ -1,0 +1,59 @@
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/item_list"
+    android:layout_width="match_parent"
+    android:layout_height="fill_parent"
+    android:orientation="vertical"
+    tools:context="com.printer.epos.rtpl.ItemListFragment">
+
+    <LinearLayout
+        android:id="@+id/headerView"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:gravity="center"
+        android:background="@color/header_bar_color_blue">
+
+        <!-- <RelativeLayout
+             android:id="@+id/ImgLayout"
+             android:layout_width="wrap_content"
+             android:layout_height="wrap_content"
+             android:layout_centerHorizontal="true"
+             android:padding="2dp"
+             android:background="@drawable/round_bg_white">
+
+             <ImageView
+                 android:id="@+id/Img"
+                 android:layout_width="50dp"
+                 android:layout_height="50dp"
+                 android:layout_centerHorizontal="true" />
+         </RelativeLayout>-->
+
+        <TextView
+            android:id="@+id/name"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:textColor="@android:color/white" />
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/name"
+            android:layout_centerHorizontal="true"
+            android:textSize="@dimen/small_textsize"
+            android:textColor="@android:color/white" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="match_parent"
+        android:background="@color/menu_list_color"
+        android:divider="#b5b5b5"
+        android:dividerHeight="1dp"
+        android:scrollbars="none" />
+    <!--android:layout_below="@id/header"-->
+</LinearLayout>

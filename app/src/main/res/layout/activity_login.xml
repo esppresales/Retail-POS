@@ -1,0 +1,116 @@
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="@drawable/login_bg"
+    tools:context=".LoginActivity">
+
+    <RelativeLayout
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:id="@+id/settings"
+            android:text="@string/action_settings"
+            android:layout_margin="10dp"
+            android:onClick="settingClick"
+            android:padding="10dp" />
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_toRightOf="@+id/settings"
+            android:layout_height="wrap_content"
+            android:text="Share Logs"
+            android:layout_margin="10dp"
+            android:onClick="shareLogs"
+            android:padding="10dp" />
+
+        <RelativeLayout
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:scrollbars="none"
+            android:layout_centerInParent="true">
+
+            <TextView
+                android:id="@+id/heading"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:text="@string/retail_pos"
+                android:textColor="@color/text_color_blue"
+                android:textSize="@dimen/heading_textsize"
+                android:textStyle="bold" />
+
+            <LinearLayout
+                android:id="@+id/linear_parent"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:background="@drawable/login_item_bg"
+                android:layout_below="@+id/heading"
+                android:orientation="vertical"
+                android:padding="10dp">
+
+                <EditText
+                    android:id="@+id/email_idET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/login_item_bg"
+                    android:drawableLeft="@drawable/username_icon"
+                    android:gravity="center"
+                    android:hint="@string/user_name"
+                    android:singleLine="true" />
+
+                <EditText
+                    android:id="@+id/passwordET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:background="@drawable/login_item_bg"
+                    android:drawableLeft="@drawable/password_icon"
+                    android:gravity="center"
+                    android:hint="@string/password"
+                    android:password="true"
+                    android:singleLine="true" />
+
+                <Button
+                    android:id="@+id/loginButton"
+                    android:layout_width="fill_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@color/green_login_button"
+                    android:text="@string/login"
+                    android:textColor="@android:color/white"
+                    android:textStyle="bold" />
+
+                <Button
+                    android:id="@+id/forgotPassswordButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="10dp"
+                    android:background="@android:color/white"
+                    android:text="@string/forgot_password"
+                    android:textColor="@android:color/black"
+                    android:textStyle="bold" />
+
+            </LinearLayout>
+
+            <TextView
+                android:id="@+id/versionNo"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_below="@+id/linear_parent"
+                android:layout_centerHorizontal="true"
+                android:layout_marginTop="16dp"
+                android:text="V.1.0"
+                android:textColor="@android:color/black"
+
+               />
+
+
+        </RelativeLayout>
+
+
+    </RelativeLayout>
+
+</ScrollView>

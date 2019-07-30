@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLL"
+        android:orientation="horizontal"
+        android:layout_marginBottom="6dp"
+        android:layout_below="@+id/horizontalSeperatorView"
+        android:weightSum="2">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".8"
+            android:textColor="@android:color/black"
+            android:text="Loyalty Points" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:layout_marginLeft="16dp"
+            android:textColor="@android:color/black"
+            android:text="Earn Point on Spend" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="2"
+        android:id="@+id/secondLL"
+        android:orientation="horizontal"
+        android:layout_below="@+id/firstLL">
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".8">
+
+            <ToggleButton
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:id="@+id/loyaltySwitch"
+                android:layout_gravity="center_vertical"
+                android:text=""
+                android:textOff=""
+                android:textOn=""
+                android:background="@drawable/toggle_button_bg" />
+        </LinearLayout>
+
+        <LinearLayout
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:gravity="left|center_horizontal"
+            android:layout_weight="1"
+            android:weightSum="1">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:text="SGD"
+                android:id="@+id/currency"
+                android:textColor="@android:color/black"
+                android:padding="10dp" />
+
+            <EditText
+                android:id="@+id/earnedAmount"
+                android:layout_width="0dp"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="10dp"
+                android:layout_weight="1"
+                android:maxLength="5"
+                android:background="@drawable/gray_border_bg"
+                android:inputType="number"
+                android:padding="10dp"
+                android:singleLine="true" />
+
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@android:color/black"
+
+                android:text="="
+                android:padding="5dp" />
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+
+                android:textColor="@android:color/white"
+
+                android:text="1 Point"
+                android:padding="5dp"
+                android:id="@+id/onePoints"
+                android:background="@android:color/holo_red_dark" />
+
+        </LinearLayout>
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

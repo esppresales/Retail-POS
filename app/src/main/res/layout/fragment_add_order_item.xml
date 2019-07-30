@@ -1,0 +1,96 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools" android:layout_width="match_parent"
+
+    android:background="@android:color/white"
+    android:layout_height="match_parent" tools:context="com.printer.epos.rtpl.AddOrderItemFragment">
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:id="@+id/addItemButton"
+        android:layout_marginTop="10dp"
+        android:layout_marginLeft="8dp"
+        android:src="@drawable/add_item"/>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/addItemButton"
+        android:weightSum="1"
+        android:id="@+id/headerll"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".28"
+            android:layout_marginLeft="8dp"
+            android:text="Product Name"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:text="Unit Price"
+            android:gravity="left"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:text="Quantity"
+            />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:id="@+id/totalPriceTV"
+            android:text="Total Price"
+            />
+
+
+        </LinearLayout>
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+        android:layout_marginTop="12dp"
+        android:id="@+id/horizontalSeperatorView"
+        android:layout_below="@+id/headerll"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gray_border_bg" />
+
+    <RelativeLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horizontalSeperatorView"
+        android:layout_marginTop="10dp">
+
+        <TextView
+            android:id="@+id/emptyTextView"
+            android:layout_width="fill_parent"
+            android:layout_height="wrap_content"
+            android:layout_centerInParent="true"
+            android:layout_centerHorizontal="true"
+            android:gravity="center"
+
+            android:textColor="@android:color/black"
+            android:visibility="gone" />
+
+        <ListView
+            android:id="@+id/list"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent"
+            android:animateLayoutChanges="true"
+            android:divider="@color/gray_background_color"
+            android:dividerHeight="1dp"
+            android:background="@drawable/gray_border_bg_bottom_left_right" />
+
+
+    </RelativeLayout>
+
+
+</RelativeLayout>

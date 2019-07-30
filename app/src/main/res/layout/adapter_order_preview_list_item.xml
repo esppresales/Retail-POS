@@ -1,0 +1,75 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:background="@android:color/white"
+    android:paddingTop="20dp"
+    android:paddingBottom="20dp"
+    >
+
+    <TextView
+        android:id="@+id/orderNameTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:textColor="@android:color/black"
+        android:textSize="16sp"
+        android:text="Dzeen Watch"
+        android:layout_marginLeft="20dp"
+        />
+
+    <TextView
+        android:id="@+id/receiptNoTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:textSize="18sp"
+        android:layout_alignParentRight="true"
+        android:textColor="@android:color/black"
+        android:layout_marginRight="540dp"
+
+        />
+    <TextView
+        android:id="@+id/unitPriceTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:gravity="right"
+        android:text="580.00"
+        android:textSize="18sp"
+        android:layout_alignParentRight="true"
+        android:textColor="@android:color/black"
+        android:layout_marginRight="390dp"
+
+        />
+
+    <TextView
+        android:id="@+id/quantityTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_centerVertical="true"
+        android:text="555"
+        android:textSize="18sp"
+        android:layout_alignParentRight="true"
+        android:gravity="center"
+        android:textColor="@android:color/black"
+        android:layout_marginRight="250dp"
+        />
+
+
+    <TextView
+        android:id="@+id/totalPriceTV"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="1740.00"
+        android:gravity="right"
+        android:layout_centerVertical="true"
+        android:textColor="@color/green_text_color"
+        android:layout_alignParentRight="true"
+        android:textSize="18sp"
+        android:layout_marginRight="10dp"
+        />
+
+
+</RelativeLayout>

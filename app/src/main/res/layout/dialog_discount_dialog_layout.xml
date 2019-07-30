@@ -1,0 +1,152 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:id="@+id/firstLL"
+        android:orientation="horizontal"
+        android:layout_below="@+id/horizontalSeperatorView"
+        android:weightSum="1">
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:textColor="@android:color/black"
+            android:text="Discount" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:layout_marginLeft="16dp"
+            android:textColor="@android:color/black"
+            android:text="Offer Period Starts" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:layout_marginLeft="16dp"
+            android:textColor="@android:color/black"
+            android:text="Offer Period Ends" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/firstLL"
+        android:id="@+id/secondLL"
+        android:weightSum="1">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:inputType="numberDecimal"
+            android:id="@+id/discountPer"
+            android:singleLine="true"
+            android:background="@drawable/gray_border_bg"
+            android:padding="10dp" />
+
+        <TextView
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".1"
+            android:textColor="@android:color/black"
+            android:text="%"
+            android:padding="10dp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:id="@+id/offerFrom"
+            android:layout_marginLeft="16dp"
+            android:hint="Start Date"
+            android:background="@drawable/gray_border_bg"
+            android:editable="false"
+            android:focusableInTouchMode="false"
+            android:singleLine="true"
+            android:padding="10dp" />
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".33"
+            android:layout_marginLeft="16dp"
+            android:editable="false"
+            android:singleLine="true"
+            android:hint="End Date"
+            android:focusableInTouchMode="false"
+            android:background="@drawable/gray_border_bg"
+            android:id="@+id/offerTo"
+            android:padding="10dp" />
+    </LinearLayout>
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/secondLL"
+        android:id="@+id/minimumSpendTv"
+        android:textColor="@android:color/black"
+        android:text="Minimum Spend Restrictions"
+
+        />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+
+        android:layout_below="@+id/minimumSpendTv"
+        android:id="@+id/fourthLL"
+        android:weightSum="1">
+
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".3"
+            android:inputType="numberDecimal"
+            android:id="@+id/spendRestriction"
+            android:background="@drawable/gray_border_bg"
+            android:singleLine="true"
+            android:padding="10dp" />
+
+
+        <TextView
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+
+            android:layout_marginLeft="5dp"
+            android:text="SGD"
+            android:textColor="@android:color/black"
+            android:id="@+id/currency"
+            />
+
+
+        <ToggleButton
+            android:id="@+id/onOffBtn"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginLeft="20dp"
+            android:text=""
+            android:textOff=""
+            android:textOn=""
+            android:background="@drawable/toggle_button_bg" />
+
+
+    </LinearLayout>
+
+
+</RelativeLayout>

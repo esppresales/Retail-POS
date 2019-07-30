@@ -1,0 +1,42 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@android:color/white"
+    tools:context="com.printer.epos.rtpl.reports.ProductThresholdFragment">
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="16dp"
+        android:layout_marginLeft="16dp"
+        android:orientation="horizontal"
+        android:weightSum="1"
+        android:id="@+id/ll">
+
+        <Button
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_weight=".2"
+            android:id="@+id/exportCsv"
+            android:background="@color/blue_button_color"
+            android:textColor="@android:color/white"
+
+            android:text="Export CSV" />
+
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@color/gray_background_color"
+        android:dividerHeight="1dp"
+        android:layout_margin="16dp"
+        android:layout_below="@+id/ll"
+        android:padding="8dp"
+        android:visibility="gone"
+        android:background="@drawable/gray_border_bg_bottom_left_right" />
+
+</RelativeLayout>

@@ -1,0 +1,13 @@
+#DirectoryIndex index.htm index.php  
+RewriteEngine On
+<IfModule mod_rewrite.c>
+Options -Indexes
+##
+RewriteEngine On
+RewriteCond %{REQUEST_FILENAME} !-f
+RewriteCond %{REQUEST_FILENAME} !-d
+##
+RewriteRule . index.php
+#
+</IfModule>
+php_value short_open_tag 1

@@ -1,0 +1,44 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="fill_parent"
+    android:layout_height="fill_parent"
+    android:background="#80000000"
+    android:orientation="horizontal" >
+
+    <view
+        android:id="@+id/image"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:layout_x="0dip"
+        android:layout_above="@+id/buttonLayout"
+        android:layout_y="0dip"
+        class="eu.janmuller.android.simplecropimage.CropImageView"
+        android:background="#55000000" />
+
+      <LinearLayout
+        android:id="@+id/buttonLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:background="#80000000"
+        android:paddingBottom="5dp" >
+
+        <Button
+            android:id="@+id/cancelBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/cancel_btn"
+            android:text="Cancel"
+            android:textColor="#FFF" />
+
+        <Button
+            android:id="@+id/cropBtn"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/done_btn"
+            android:text="Crop"
+            android:textColor="#FFF" />
+    </LinearLayout>
+
+</RelativeLayout>

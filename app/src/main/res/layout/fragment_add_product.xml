@@ -1,0 +1,269 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@color/gray_background_color">
+
+    <ScrollView
+        android:id="@+id/formScroll"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:background="@drawable/gray_border_bg_bottom_left_right">
+
+        <RelativeLayout
+            android:id="@+id/form"
+            android:layout_width="fill_parent"
+            android:layout_height="fill_parent">
+
+            <ImageView
+                android:id="@+id/img"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:src="@drawable/add_photo_icon"
+                />
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_centerHorizontal="true"
+                android:layout_below="@+id/img"
+                android:layout_height="wrap_content">
+
+                <TextView
+                    android:id="@+id/product_name"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:text="@string/product_name" />
+
+                <EditText
+                    android:id="@+id/product_nameET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:maxLength="100"
+                    android:singleLine="true"
+                    android:inputType="textCapWords"
+                    android:layout_below="@id/product_name"
+                    android:background="@drawable/gray_border_bg" />
+
+                <TextView
+                    android:id="@+id/barcode"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@id/product_name"
+                    android:text="@string/barcode" />
+
+                <EditText
+                    android:id="@+id/barcodeET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/barcode"
+                    android:gravity="center_vertical"
+                    android:maxLength="100"
+                    android:singleLine="true"
+                    android:layout_toRightOf="@id/product_nameET"
+                    android:background="@drawable/gray_border_bg" />
+
+                <ImageButton
+                    android:id="@+id/barcodeButton"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/barcode"
+                    android:layout_toRightOf="@+id/barcodeET"
+                    android:background="@drawable/barcode" />
+
+                <TextView
+                    android:id="@+id/product_category"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/product_nameET"
+                    android:textColor="@android:color/black"
+                    android:text="@string/product_category" />
+
+
+                <Spinner
+                    android:id="@+id/product_categoryET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_below="@id/product_category"
+                    android:background="@drawable/gray_border_bg"
+                    android:gravity="center_vertical" />
+
+                <TextView
+                    android:id="@+id/stock_location"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/barcodeET"
+                    android:layout_toRightOf="@id/product_category"
+                    android:textColor="@android:color/black"
+                    android:text="@string/stock_location" />
+
+                <EditText
+                    android:id="@+id/stock_locationET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="center_vertical"
+                    android:maxLength="100"
+                    android:singleLine="true"
+                    android:layout_below="@id/stock_location"
+                    android:layout_toRightOf="@id/product_categoryET"
+                    android:background="@drawable/gray_border_bg" />
+
+
+                <TextView
+                    android:id="@+id/supplier"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/product_categoryET"
+                    android:textColor="@android:color/black"
+                    android:text="@string/supplier" />
+
+                <EditText
+                    android:id="@+id/supplierET"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/supplier"
+                    android:gravity="center_vertical"
+                    android:maxLength="100"
+                    android:singleLine="true"
+                    android:background="@drawable/gray_border_bg" />
+
+                <TextView
+                    android:id="@+id/quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/stock_locationET"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@id/supplier"
+                    android:text="@string/quantity" />
+
+                <EditText
+                    android:id="@+id/quantityET"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/quantity"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:maxLength="6"
+                    android:inputType="number"
+                    android:layout_toRightOf="@id/supplierET"
+                    android:background="@drawable/gray_border_bg" />
+
+                <TextView
+                    android:id="@+id/min_stock_alert_quantity"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/stock_locationET"
+                    android:textColor="@android:color/black"
+                    android:layout_toRightOf="@id/quantity"
+                    android:text="@string/min_stock_alert_quantity" />
+
+                <EditText
+                    android:id="@+id/min_stock_alert_quantityET"
+                    android:layout_height="wrap_content"
+                    android:layout_width="wrap_content"
+                    android:layout_below="@id/min_stock_alert_quantity"
+                    android:gravity="center_vertical"
+                    android:singleLine="true"
+                    android:maxLength="6"
+                    android:inputType="number"
+                    android:layout_toRightOf="@id/quantityET"
+                    android:background="@drawable/gray_border_bg" />
+
+                <TextView
+                    android:id="@+id/product_description"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/supplierET"
+                    android:textColor="@android:color/black"
+                    android:text="@string/product_description" />
+
+                <EditText
+                    android:id="@+id/product_descriptionET"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:gravity="top"
+                    android:maxLength="1000"
+                    android:layout_below="@id/product_description"
+                    android:background="@drawable/gray_border_bg" />
+
+                <TextView
+                    android:id="@+id/product_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/quantityET"
+                    android:layout_toRightOf="@id/product_description"
+                    android:textColor="@android:color/black"
+                    android:text="@string/product_cost" />
+
+                <LinearLayout
+                    android:id="@+id/price_lin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/product_price"
+                    android:layout_toRightOf="@id/product_descriptionET"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/product_priceET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:maxLength="10"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/gray_border_bg" />
+
+                    <TextView
+                        android:id="@+id/dollar"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sgd"
+                        android:paddingLeft="2dp"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+
+                <TextView
+                    android:id="@+id/selling_price"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/quantityET"
+                    android:layout_toRightOf="@id/product_price"
+                    android:textColor="@android:color/black"
+                    android:text="@string/selling_price" />
+
+                <LinearLayout
+                    android:id="@+id/selling_price_lin"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_below="@id/selling_price"
+                    android:layout_toRightOf="@id/price_lin"
+                    android:orientation="horizontal">
+
+                    <EditText
+                        android:id="@+id/selling_priceET"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:gravity="center_vertical"
+                        android:singleLine="true"
+                        android:maxLength="10"
+                        android:inputType="numberDecimal"
+                        android:background="@drawable/gray_border_bg" />
+
+                    <TextView
+                        android:id="@+id/dollar1"
+                        android:layout_width="wrap_content"
+                        android:layout_height="wrap_content"
+                        android:text="@string/sgd"
+                        android:paddingLeft="2dp"
+                        android:layout_gravity="center_vertical"
+                        android:textColor="@android:color/black" />
+                </LinearLayout>
+            </RelativeLayout>
+        </RelativeLayout>
+    </ScrollView>
+</RelativeLayout>

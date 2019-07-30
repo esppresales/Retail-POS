@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content" >
+
+    <TextView
+        android:id="@+id/boldMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentTop="true"
+        android:gravity="center"
+        android:text="Main bold heading "
+        android:textColor="@android:color/black"
+        android:textSize="18sp" android:visibility="gone"/>
+
+    <TextView
+        android:id="@+id/simpleMessage"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_below="@id/boldMessage"
+        android:gravity="center"
+        android:text="Simple text"
+        android:textColor="@android:color/black"
+        android:textSize="18sp" />
+
+    <View
+        android:id="@+id/horizontalSeperatorView"
+        android:layout_width="match_parent"
+        android:layout_height=".5dp"
+        android:layout_below="@+id/simpleMessage"
+        android:layout_centerHorizontal="true"
+        android:background="@color/green_login_button"
+        android:visibility="visible" />
+
+    <View
+        android:id="@+id/view"
+        android:layout_width=".5dp"
+        android:layout_height="40dp"
+        android:layout_below="@+id/horizontalSeperatorView"
+        android:layout_centerHorizontal="true"
+        android:background="@color/green_login_button"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/cancel"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horizontalSeperatorView"
+        android:layout_toRightOf="@+id/view"
+        android:background="@android:color/transparent"
+        android:textColor="@color/green_login_button"
+        android:textSize="15sp"
+        android:visibility="visible" />
+
+    <Button
+        android:id="@+id/ok"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/horizontalSeperatorView"
+        android:layout_toLeftOf="@+id/view"
+        android:background="@android:color/transparent"
+        android:textColor="@color/green_login_button"
+        android:textSize="15sp" />
+
+</RelativeLayout>

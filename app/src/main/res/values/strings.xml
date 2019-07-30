@@ -1,0 +1,301 @@
+<resources>
+    <string name="app_name">RetailPos</string>
+
+    <string name="hello_world">Hello world!</string>
+    <string name="sgd">SGD</string>
+    <string name="action_settings">Settings</string>
+    <string name="retail_pos">Retail POS</string>
+    <string name="login">Login</string>
+    <string name="forgot_password">Forgot Password ?</string>
+    <string name="user_name">Username</string>
+    <string name="password">Password</string>
+    <string name="title_item_list">Items</string>
+    <string name="title_item_detail">Item Detail</string>
+    <string name="ok_button">OK</string>
+
+    <string name="text_amount_before_gst">Amount before GST</string>
+
+    <string name="text_amount_after_discount">Amount after discount</string>
+    <string name="text_gst_inclusive">GST inclusive</string>
+    <string name="text_amount_gst_inclusive">Total price payable includes GST</string>
+    <string name="cancel_button">CANCEL</string>
+    <string name="cancel_order_button">CANCEL ORDER</string>
+    <string name="field_not_valid">Please enter a valid username.</string>
+    <string name="password_not_valid">Please enter a valid password.</string>
+    <string name="no_internet_connection">Unable to connect to Printer</string>
+    <string name="date_validation_string">End date should be equal or greater than start date</string>
+    <string name="error_message">Something went wrong. Please try again.</string>
+    <string name="required_password">Password is required.</string>
+    <!--<string name="required_valid_password">Password must have (8-15 char) &amp; contain one (Upper, Lower) char, one digit and one Special Symbol(!@#$%^&amp;*()_-)</string>-->
+    <string name="required_valid_password">Password must have (5-10 digit) only.</string>
+    <string name="required_email_id">Email Id is required.</string>
+    <string name="invalid_email">Please enter the valid email address.</string>
+    <string name="required_valid_email_id_range">Email ID max range is 50 characters.</string>
+    <string name="required_first_name">First name is required.</string>
+    <string name="required_valid_first_name">First name must contains characters only and max 50 allowed.</string>
+    <string name="required_last_name">Last name is required.</string>
+    <string name="required_valid_last_name">Last name must contains characters only and max 50 allowed.</string>
+    <string name="required_mobile_number">Mobile number is required.</string>
+    <string name="required_valid_mobile_number">Mobile number must contain digits only (8-20 char)</string>
+    <string name="required_membership_id">Membership Id is required.</string>
+    <string name="required_valid_membership_id">Membership id must contain digits only (10 char)</string>
+    <string name="required_date_of_birth">Date of Birth is required.</string>
+    <string name="required_address">Address is required.</string>
+    <string name="required_description">Product Description is required.</string>
+    <string name="required_category">Product Category is required.</string>
+    <string name="required_product_name">Product name is required.</string>
+    <string name="required_barcode">Barcode is required.</string>
+    <string name="required_product_price">Product cost is required.</string>
+    <!--<string name="required_valid_product_price">Product cost must contains digit only</string>-->
+    <string name="required_valid_product_price">Product cost must be numeric values only.</string>
+    <string name="required_selling_price">Selling price is required.</string>
+    <string name="required_price">Price is required.</string>
+    <!--<string name="required_valid_selling_price">Selling price must contains digit only</string>-->
+    <string name="required_valid_selling_price">Selling price must be numeric values only.</string>
+    <string name="required_valid_price">Invalid price format</string>
+    <string name="error_less_then_1crore">Please enter numeric values less than 1 crore.</string>
+    <string name="required_stock_location">Stock Location is required.</string>
+    <string name="required_quantity">Quantity is required.</string>
+    <string name="required_valid_quantity">Quantity must contains digit only (1-6 char)</string>
+    <string name="required_min_stock_alert">Min stock alert quantity is required.</string>
+    <string name="required_valid_min_stock_alert">Min stock alert quantity must contains digit only (1-6 char)</string>
+    <string name="required_product_description">Product Description is required.</string>
+    <string name="required_supplier">Supplier is required.</string>
+    <string name="required_ipAddress">IP Address is not valid.</string>
+
+
+    <!-- Dashboard Screen-->
+    <string name="todays_sale">Today\'s Sales</string>
+    <string name="twenty_eight_hundred">0</string>
+    <string name="todays_transaction">Today\'s Transactions</string>
+    <string name="eighteen">0</string>
+    <string name="todays_discount">Today\'s Discount</string>
+    <string name="twenty_five_per">0%</string>
+    <string name="minimum_purchase">Minimum $0 purchase</string>
+    <string name="add_staff">Add Staff</string>
+    <string name="add_product">Add Product</string>
+    <string name="new_order">New Order</string>
+    <string name="add_customer">Add Customer</string>
+
+    <!--  Add Staff -->
+    <string name="username">Username</string>
+    <string name="UserName">Username (*)</string>
+    <string name="save">SAVE</string>
+    <string name="manager">Manager</string>
+    <string name="employee">Employee</string>
+    <string name="staff">Staff</string>
+    <string name="role">Role</string>
+
+    <!--  Product Screen -->
+    <string name="product">Products</string>
+    <string name="products">Products</string>
+    <string name="view">View</string>
+    <string name="edit">Edit</string>
+    <string name="delete">Delete</string>
+    <string name="activate">Activate</string>
+    <string name="de_activate">De Activate</string>
+
+
+    <!-- product fragment -->
+    <string name="frag_product_name">Product Name</string>
+    <string name="frag_barcode">Barcode</string>
+    <string name="frag_product_category">Product Category</string>
+    <string name="frag_product_cost">Product Cost</string>
+    <string name="frag_selling_price">Selling Price</string>
+    <string name="frag_stock_location">Stock Location</string>
+    <string name="frag_quantity">Quantity</string>
+    <string name="frag_min_stock_alert_quantity">Min Stock Alert Quantity</string>
+    <string name="frag_product_description">Product Description</string>
+    <string name="frag_supplier">Supplier</string>
+
+    <!--  Add Product -->
+    <string name="product_name">Product Name (*)</string>
+    <string name="barcode">Barcode (*)</string>
+    <string name="product_category">Product Category (*)</string>
+    <string name="Product_Category">Product Category</string>
+    <string name="product_cost">Product Cost (*)</string>
+    <string name="selling_price">Selling Price (*)</string>
+    <string name="stock_location">Stock Location (*)</string>
+    <string name="quantity">Quantity (*)</string>
+    <string name="min_stock_alert_quantity">Min Stock Alert Quantity (*)</string>
+    <string name="product_description">Product Description (*)</string>
+    <string name="supplier">Supplier (*)</string>
+
+    <!--  Settings Screen  -->
+    <string name="setting_title">Settings</string>
+    <string name="setting_title_first">Discount</string>
+    <string name="setting_description_first">Set storewide Discount</string>
+    <!--<string name="setting_title_second">Tax</string>-->
+    <string name="setting_title_second">GST</string>
+    <!--<string name="setting_description_second">Change tax percentage</string>-->
+    <string name="setting_description_second">Add GST information</string>
+    <string name="setting_title_third">Coupon code</string>
+    <string name="setting_description_third">Add coupon codes and associated discounts</string>
+    <string name="setting_title_fourth">Currency</string>
+    <string name="setting_description_fourth">Set base currency which will be used throughout the app</string>
+    <string name="setting_title_fifth">Loyalty Points</string>
+    <string name="setting_description_fifth">Set Loyalty Points and value</string>
+    <string name="setting_title_six">Printer Configuration</string>
+    <string name="setting_description_six">Enter printer device IDs as registered on the web config</string>
+    <string name="setting_title_seven">Peripherals Configuration</string>
+    <string name="setting_description_seven">Enter peripheral IDs as registered on the web config</string>
+    <string name="setting_title_eight">Receipt Configuration</string>
+    <string name="setting_description_eight">Set default header and footer to be printed</string>
+
+    <!--  Reports Screen  -->
+    <string name="reports_title">Reports</string>
+    <string name="reports_title_first">Staff Time Tracking</string>
+    <string name="reports_title_second">Sales Chart</string>
+    <string name="reports_title_third">Product Performance</string>
+    <string name="reports_title_fourth">Product Threshold</string>
+    <string name="reports_title_fifth">Stock In Hand</string>
+    <string name="reports_title_sixth">Day Sales Report</string>
+
+
+    <!--  Add Customer  -->
+    <string name="membership_id">Membership ID </string>
+    <string name="membership_id_customer">Membership ID (*) </string>
+    <string name="mobile_no">Mobile No (*) </string>
+    <string name="mobile_no_customer">Mobile No </string>
+    <string name="membership_validity">Membership Validity</string>
+    <string name="first_name">First Name (*) </string>
+    <string name="first_name_customer">First Name (*) </string>
+    <string name="last_name">Last Name</string>
+    <string name="last_name_required">Last Name (*)</string>
+    <string name="date_of_birth">Date of Birth</string>
+    <string name="Date_of_Birth">Date of Birth (*)</string>
+    <string name="gender">Gender</string>
+    <string name="email_id">Email ID</string>
+    <string name="address">Address</string>
+    <string name="Address">Address (*)</string>
+    <string name="nric_passport">NRIC/Passport</string>
+    <string name="NRIC_passport">NRIC/Passport (*)</string>
+    <string name="postal_code">Postal Code (*)</string>
+    <string name="postal_code_not_mandatory">Postal Code</string>
+    <string name="country">Country</string>
+    <string name="male">Male</string>
+    <string name="female">Female</string>
+    <string name="months">Months</string>
+    <string name="years">Years</string>
+
+    <!-- Add Order-->
+    <string name="customer_name">Customer Name</string>
+    <string name="add_item">Add Item</string>
+    <string name="unit_price">Unit Price (SGD)</string>
+    <string name="total_price">Total Price (SGD)</string>
+    <string name="gross_amount">Gross Amount</string>
+    <string name="gst_reg_no">GST Reg No.</string>
+    <string name="discount_amount">Discount Amount(0%)</string>
+    <string name="coupon_amount">Coupon Amount</string>
+    <string name="redeemed_amount">Redemption Amount</string>
+    <string name="tax">Tax Amount (0%)</string>
+    <string name="net_amount">Net Amount</string>
+    <string name="put_on_hold">PUT ON HOLD</string>
+    <string name="complete">COMPLETE</string>
+    <string name="coupon_code">Coupon Code</string>
+    <string name="redeem_points">Redemption Points</string>
+    <string name="Redeem_Points">Redemption Amount</string>
+    <string name="got_sgd">(You got SGD 100 off)</string>
+    <string name="apply">Apply</string>
+    <string name="product_name_sku">Product Name / Product SKU</string>
+    <string name="product_sku">Product SKU</string>
+
+    <!-- Order Preview -->
+    <string name="order_preview">Order Preview</string>
+    <string name="order_date">Order Date</string>
+    <string name="product_details">Product Details</string>
+    <string name="receipt_no">Receipt No.</string>
+    <string name="amount">Amount</string>
+    <string name="coupon_amount_value">Coupon Amount</string>
+    <string name="total_amount">Total</string>
+    <string name="order_quantity">QTY</string>
+    <string name="discount_percentage">Discount Percentage</string>
+    <string name="discount_Amount">Discount Amount</string>
+    <string name="coupon">Coupon</string>
+    <string name="coupon_Amount">Coupon Amount</string>
+    <string name="redeemed_points">Redeemed Points</string>
+    <string name="pay">PAY</string>
+
+    <!-- Order Detail -->
+    <string name="order_detail">Order Detail</string>
+    <string name="return_order">RETURN ORDER</string>
+    <string name="order_id">Order Number</string>
+
+    <!-- Order Listing -->
+    <string name="order_listing">Orders</string>
+    <string name="order_number">Order Number: </string>
+    <string name="completed_order">Completed Order</string>
+    <string name="on_hold">On Hold</string>
+
+    <!-- Return Order -->
+    <string name="return_order_title">Return Order</string>
+    <string name="return_amount">Return Amount</string>
+    <string name="print">PRINT</string>
+    <string name="confirm_return">CONFIRM RETURN</string>
+
+    <!--  Customer -->
+    <string name="customers">Customers</string>
+    <string name="customer_detail">Customers detail</string>
+    <string name="full_name">Full Name</string>
+    <string name="transaction">Transaction</string>
+    <string name="transactions">Transactions</string>
+
+    <string name="edit_category_title">Category</string>
+    <string name="edit_category_cancel_button">CANCEL</string>
+    <string name="edit_category_save_button">SAVE</string>
+    <string name="edit_category_quantity_hint">Add Quantity</string>
+    <string name="category_delete_confirm_message">Do you want to delete this category ?</string>
+    <string name="customer_delete_alert">Do you want to delete this customer ?</string>
+    <string name="product_delete_alert">Do you want to delete this product ?</string>
+    <string name="coupon_delete_alert">Do you want to delete this coupon ?</string>
+    <string name="staff_update_status_alert">Do you want to deactivate this staff?</string>
+    <string name="staff_active_status_alert">Do you want to activate this staff?</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="title_activity_splash">RetailPos</string>
+    <string name="pay_popup_confirm_text">CONFIRM</string>
+
+
+    <string name="exceeded_quantity_limit">Exceeded quantity limit</string>
+    <string name="exceeded_quantity_limit_message">Product quantity for %s exceeds inventory limit,\nPlease check with supervisor or the store manager.</string>
+    <string name="error_max_eight_char_msg">The amount must be 1 to 8 characters long.</string>
+    <string name="title_activity_image_cropping">Crop Image</string>
+    <string name="title_select_payment_mode">Select Payment Mode</string>
+    <string name="text_visa_master">Visa/Master</string>
+    <string name="text_nets">Nets</string>
+    <string name="text_cash">Cash</string>
+    <string name="text_payment_type">Payment Type</string>
+    <string name="text_sub_total">Sub-Total</string>
+
+    <string name="title_day_sales_report">Day Sales Report</string>
+    <string name="please_wait_text">Please wait...</string>
+    <string name="text_official_receipt">Official Receipt</string>
+    <string name="text_subTotal">Sub-Total:</string>
+    <string name="text_amount_beforeGst">Amount before GST:</string>
+    <string name="text_discount">Discount (</string>
+    <string name="symbol_percentage">%):</string>
+    <string name="text_coupon_amount">Coupon Amount:</string>
+    <string name="text_redeemption_points">Redemption Amount (</string>
+    <string name="text_points">Points):</string>
+    <string name="text_amount_afterDiscount">Amount after discount:</string>
+    <string name="text_gstInclusive">% GST inclusive:</string>
+    <string name="text_amount_includes_gst">Total price payable includes GST:</string>
+    <string name="text_change">Change:</string>
+    <string name="text_day_sales_report">Day Sales Report</string>
+    <string name="text_total_transaction">Total Transactions:</string>
+    <string name="text_total_qty">Total Quantity:</string>
+    <string name="text_cash_with_colon">CASH:</string>
+    <string name="text_nets_with_colon">NETS:</string>
+    <string name="text_visa_master_with_colon">MASTER/VISA:</string>
+    <string name="receipt_separator">--------------------------------------------------------</string>
+    <string name="text_item_description">Item Description</string>
+    <string name="text_rcpt_no">Rcpt No</string>
+    <string name="text_qty">Qty</string>
+    <string name="text_price">Price</string>
+    <string name="text_amount">Amount</string>
+    <string name="text_disc">Disc</string>
+    <string name="text_receipt_no">Receipt No.</string>
+
+
+</resources>

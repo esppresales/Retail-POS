@@ -1,0 +1,83 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:layout_width="match_parent"
+    android:layout_height="wrap_content"
+    android:gravity="center_vertical"
+    android:orientation="horizontal"
+    android:padding="10dp">
+
+    <RelativeLayout
+        android:id="@+id/RelativeText"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_toLeftOf="@+id/overflow_menu">
+
+
+        <LinearLayout
+            android:id="@+id/ll"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentLeft="true"
+            android:layout_centerVertical="true"
+            android:layout_toLeftOf="@+id/points"
+            android:orientation="vertical">
+
+            <TextView
+                android:id="@+id/title"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:singleLine="true"
+                android:text="@string/product"
+                android:textColor="@color/header_bar_color_blue"
+                android:textSize="@dimen/heading_textsize" />
+
+            <TextView
+                android:id="@+id/phone"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="2dp"
+                android:singleLine="true"
+                android:text="+65 123456"
+                android:textColor="@android:color/black"
+                android:textSize="@dimen/small_textsize" />
+        </LinearLayout>
+
+        <TextView
+            android:id="@+id/points"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_centerVertical="true"
+            android:layout_marginRight="100dp"
+            android:layout_toLeftOf="@+id/date"
+            android:text="50 Points"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/small_textsize" />
+
+        <!--<View
+            android:layout_width="0dp"
+            android:layout_height="1dp"
+            android:layout_weight=".25"/>-->
+
+        <TextView
+            android:id="@+id/date"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_alignParentRight="true"
+            android:layout_centerVertical="true"
+            android:text="Membership Expiry: 24 March 2017"
+            android:textColor="@android:color/black"
+            android:textSize="@dimen/small_textsize" />
+
+    </RelativeLayout>
+
+    <Button
+        android:id="@+id/overflow_menu"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentRight="true"
+        android:layout_centerVertical="true"
+        android:layout_marginLeft="20dp"
+        android:background="@drawable/dropdown_icon_gray"
+        android:padding="5dp" />
+
+</RelativeLayout>

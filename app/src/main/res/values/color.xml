@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+
+    <color name="green_login_button">#01C853</color>
+    <color name="border_color_gray">#cccccc</color>
+    <color name="text_color_blue">#004194</color>
+    <color name="header_bar_color_blue">#003896</color>
+    <color name="menu_list_color">#33435C</color>
+    <color name="menu_list_selector_color">#2D3C51</color>
+    <color name="settings_desc_color">#A0A0A0</color>
+    <color name="order_button_bg">#9D9D9D</color>
+
+    <!--  Dashboard colors -->
+    <color name="gray_background_color">#EAEAEA</color>
+    <color name="gray_text_color">#555555</color>
+
+    <color name="green_text_color">#61C291</color>
+    <color name="pink">#e91e63</color>
+    <color name="pink_pressed">#ec407a</color>
+    <color name="plus_icon_color">#fafafa</color>
+
+    <color name="blue_button_color">#3F50B5</color>
+    <color name="blue_button_border_color">#7D88BD</color>
+    <color name="orange_button_color">#E94F50</color>
+    <color name="orange_button_border_color">#D87A79</color>
+    <color name="gray_button_color">#9E9E9E</color>
+
+
+    <color name="colorPrimary">#003896</color>
+    <color name="colorPrimaryDark">#303F9F</color>
+    <color name="colorAccent">#FF4081</color>
+
+    <color name="base">#FFFFFB</color>
+    <color name="overlay">#AA1C1C1C</color>
+    <color name="text">#1C1C1C</color>
+    <color name="handle">#86C166</color>
+    <color name="frame">#86C166</color>
+    <color name="guide">#AA86C166</color>
+    <color name="menu_bg">#FFFFFB</color>
+</resources>

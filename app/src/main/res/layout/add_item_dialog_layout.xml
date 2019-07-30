@@ -1,0 +1,119 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+
+    android:background="@drawable/popup_bg"
+    android:id="@+id/container"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <LinearLayout
+        android:focusable="true"
+        android:focusableInTouchMode="true"
+        android:layout_width="0px"
+        android:layout_height="0px" />
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/add_item"
+        android:id="@+id/addItemTV"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:textStyle="bold"
+        android:textColor="@android:color/black" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="2dp"
+
+        android:id="@+id/horizontalSeperatorView"
+        android:layout_below="@+id/addItemTV"
+        android:layout_centerHorizontal="true"
+        android:background="@drawable/gray_border_bg" />
+
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceMedium"
+        android:text="@string/edit_category_cancel_button"
+        android:id="@+id/cancelDialog"
+        android:textStyle="bold"
+        android:textColor="@color/header_bar_color_blue"
+        android:layout_alignParentRight="true"
+        android:layout_alignTop="@+id/addItemTV" />
+
+    <TextView
+        android:id="@+id/productNameTV"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/product_name_sku"
+        android:textStyle="bold"
+        android:textColor="@android:color/black"
+        android:layout_below="@+id/horizontalSeperatorView" />
+
+    <EditText
+        android:layout_marginTop="5dp"
+        android:id="@+id/searchProductET"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignLeft="@+id/productNameTV"
+        android:layout_alignRight="@+id/productNameTV"
+        android:singleLine="true"
+        android:background="@drawable/gray_border_bg"
+        android:layout_below="@+id/productNameTV"
+        android:textColor="@android:color/black" />
+
+    <LinearLayout
+        android:orientation="horizontal"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:weightSum="3"
+        android:layout_below="@+id/searchProductET"
+        android:id="@+id/ListHeading"
+        android:background="@android:color/white">
+
+        <TextView
+            android:id="@+id/productNameHTV"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:textStyle="bold"
+            android:text="@string/product_name"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/productSKUHTV"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight="1.2"
+            android:textStyle="bold"
+            android:text="@string/product_sku"
+            android:gravity="center_vertical"
+            android:textColor="@android:color/black" />
+
+        <TextView
+            android:id="@+id/productPriceHTV"
+            android:layout_width="0dp"
+            android:layout_height="match_parent"
+            android:layout_weight=".6"
+            android:textStyle="bold"
+            android:text="Price"
+            android:gravity="center"
+            android:textColor="@android:color/black" />
+
+    </LinearLayout>
+
+    <ListView
+        android:id="@+id/productList"
+        android:layout_width="match_parent"
+        android:layout_marginTop="10dp"
+        android:layout_alignLeft="@+id/productNameTV"
+        android:layout_alignRight="@+id/productNameTV"
+        android:layout_height="match_parent"
+        android:layout_below="@+id/ListHeading"
+        android:divider="@color/border_color_gray"
+        android:dividerHeight="1dp"></ListView>
+
+</RelativeLayout>

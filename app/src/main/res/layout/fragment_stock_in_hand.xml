@@ -1,0 +1,81 @@
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:id="@+id/container"
+
+    android:weightSum="2"
+    android:background="@android:color/white"
+    tools:context="com.printer.epos.rtpl.reports.StockInHandFragment">
+
+    <TextView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentLeft="true"
+        android:layout_marginLeft="16dp"
+        android:layout_marginTop="16dp"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Number Of Units"
+        android:id="@+id/textView4" />
+
+    <LinearLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="horizontal"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+
+        android:id="@+id/ll"
+        android:layout_below="@+id/textView4"
+        android:weightSum="2">
+
+        <EditText
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight="1"
+            android:background="@drawable/gray_border_bg"
+            android:id="@+id/nofUnits"
+            android:inputType="number"
+            android:hint="Number of Units in stock"
+            android:padding="10dp" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:id="@+id/getList"
+            android:background="@color/blue_button_color"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="8dp"
+            android:text="Get List" />
+
+        <Button
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".5"
+            android:id="@+id/exportCsv"
+            android:background="@color/blue_button_color"
+            android:textColor="@android:color/white"
+            android:layout_marginLeft="8dp"
+            android:text="Export CSV" />
+    </LinearLayout>
+
+
+    <ListView
+        android:id="@+id/list"
+        android:layout_width="fill_parent"
+        android:layout_height="fill_parent"
+        android:divider="@color/gray_background_color"
+        android:dividerHeight="1dp"
+        android:layout_marginTop="8dp"
+        android:layout_marginLeft="16dp"
+        android:layout_marginRight="16dp"
+        android:layout_marginBottom="16dp"
+        android:layout_below="@+id/ll"
+        android:visibility="gone"
+        android:padding="8dp"
+        android:background="@drawable/gray_border_bg_bottom_left_right" />
+
+
+</RelativeLayout>

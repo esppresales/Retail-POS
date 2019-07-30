@@ -1,0 +1,518 @@
+-- phpMyAdmin SQL Dump
+-- version 3.3.6
+-- http://www.phpmyadmin.net
+--
+-- Host: localhost
+-- Generation Time: Mar 30, 2015 at 06:48 AM
+-- Server version: 5.5.40
+-- PHP Version: 5.3.28
+
+
+
+/*!40101 SET @OLD_CHARACTER_SET_CLIENT=@@CHARACTER_SET_CLIENT */;
+/*!40101 SET @OLD_CHARACTER_SET_RESULTS=@@CHARACTER_SET_RESULTS */;
+/*!40101 SET @OLD_COLLATION_CONNECTION=@@COLLATION_CONNECTION */;
+/*!40101 SET NAMES utf8 */;
+
+--
+-- Database: 'ranonet_epson'
+--
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'coupons'
+--
+
+CREATE TABLE IF NOT EXISTS coupons (
+  id primary key autoincrement,
+  coupon_code varchar(20) NOT NULL,
+  amount decimal(10,2) NOT NULL,
+  validity_from_date datetime NOT NULL,
+  validity_to_date datetime NOT NULL,
+  created_date date NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  
+);
+
+--
+-- Dumping data for table 'coupons'
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'customers'
+--
+
+CREATE TABLE IF NOT EXISTS customers (
+  id primary key autoincrement,
+  first_name varchar(40) NOT NULL,
+  last_name varchar(40) NOT NULL,
+  mobile_number varchar(20) NOT NULL,
+  dob date NOT NULL,
+  gender enum('Male','Female') NOT NULL,
+  address text NOT NULL,
+  email_id varchar(128) NOT NULL,
+  earned_loyalty_points int(11) DEFAULT NULL,
+  membership_id varchar(40) NOT NULL,
+  created_date date NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  
+);
+
+--
+-- Dumping data for table 'customers'
+--
+
+INSERT INTO customers (id, first_name, last_name, mobile_number, dob, gender, address, email_id, earned_loyalty_points, membership_id, created_date, modified_date) VALUES
+(15, 'n', 'm', '96558888899', '2015-03-27', 'Male', 'gy', 'shrshtgupta@gmail.com', NULL, '125677888877', '2015-03-27', '2015-03-27 00:38:18'),
+(17, 'bn', 'jm', '655874698889', '2015-03-27', 'Male', 'yhj', 'archana.pareta-buyer@gmail.com', NULL, '123344569', '2015-03-27', '2015-03-27 00:48:39'),
+(20, 'Puneet', 'gupta', '9461815403', '2015-03-27', 'Male', 'thanks', 'puneet@gmail.com', NULL, '1212121212', '2015-03-27', '2015-03-27 02:08:08'),
+(21, 'puneet', 'gupta', '9461815403', '2015-03-27', 'Male', 'thanks', 'puneet@ranosys.com', NULL, '121212121', '2015-03-27', '2015-03-27 02:09:41'),
+(22, 'njjk', 'adghji', '6545888558', '2015-03-27', 'Male', 'kki', 'nishkam@gmail.com', NULL, '134123345', '2015-03-27', '2015-03-27 03:47:20');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'customer_redeem_history'
+--
+
+CREATE TABLE IF NOT EXISTS customer_redeem_history (
+  id primary key autoincrement,
+  customer_id int(11) NOT NULL,
+  order_id int(11) NOT NULL,
+  redeem_points int(11) NOT NULL,
+  points_amount decimal(10,2) NOT NULL,
+  created_date date NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  ,
+  KEY customer_id (customer_id,order_id),
+  KEY order_id (order_id)
+);
+
+--
+-- Dumping data for table 'customer_redeem_history'
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'discounts'
+--
+
+CREATE TABLE IF NOT EXISTS discounts (
+  id primary key autoincrement,
+  percentage decimal(10,2) NOT NULL,
+  from_date datetime NOT NULL,
+  to_date datetime NOT NULL,
+  min_restriction enum('0','1') NOT NULL,
+  min_spend decimal(10,2) NOT NULL,
+  created_date date NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  
+);
+
+--
+-- Dumping data for table 'discounts'
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'loyalty_points_history'
+--
+
+CREATE TABLE IF NOT EXISTS loyalty_points_history (
+  id primary key autoincrement,
+  order_id int(11) NOT NULL,
+  customer_id int(11) NOT NULL,
+  amount_spend decimal(10,2) NOT NULL,
+  earned_points int(11) NOT NULL,
+  created_date date NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  ,
+  KEY order_id (order_id),
+  KEY customer_id (customer_id)
+);
+
+--
+-- Dumping data for table 'loyalty_points_history'
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'migration'
+--
+
+CREATE TABLE IF NOT EXISTS migration (
+  version varchar(180) NOT NULL,
+  apply_time int(11) DEFAULT NULL,
+  PRIMARY KEY (version)
+);
+
+--
+-- Dumping data for table 'migration'
+--
+
+INSERT INTO migration (version, apply_time) VALUES
+('m000000_000000_base', 1426160267),
+('m130524_201442_init', 1426160270);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'orders'
+--
+
+CREATE TABLE IF NOT EXISTS orders (
+  id primary key autoincrement,
+  customer_id int(11) NOT NULL,
+  customer_name varchar(100) NOT NULL,
+  employee_id int(11) NOT NULL,
+  "status" enum('on hold','cancelled','completed') NOT NULL,
+  gross_amount decimal(10,2) NOT NULL,
+  discount_percentage decimal(10,2) DEFAULT NULL,
+  discount_amount decimal(10,2) DEFAULT NULL,
+  coupon_code varchar(20) DEFAULT NULL,
+  coupon_discount_amount decimal(10,2) DEFAULT NULL,
+  tax_percentage decimal(10,2) NOT NULL,
+  tax_amount decimal(10,2) NOT NULL,
+  final_amount decimal(10,2) NOT NULL,
+  created_date date NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  ,
+  KEY customer_id (customer_id),
+  KEY employee_id (employee_id)
+);
+
+--
+-- Dumping data for table 'orders'
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'order_items'
+--
+
+CREATE TABLE IF NOT EXISTS order_items (
+  id primary key autoincrement,
+  product_id int(11) NOT NULL,
+  order_id int(11) NOT NULL,
+  qty int(11) NOT NULL,
+  product_price decimal(10,2) NOT NULL,
+  ,
+  KEY product_id (product_id),
+  KEY order_id (order_id)
+);
+
+--
+-- Dumping data for table 'order_items'
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'products'
+--
+
+CREATE TABLE IF NOT EXISTS products (
+  id primary key autoincrement,
+  "name" varchar(100) NOT NULL,
+  description text NOT NULL,
+  barcode varchar(100) NOT NULL,
+  price decimal(10,2) NOT NULL,
+  quantity int(11) NOT NULL,
+  category_id int(11) NOT NULL,
+  image varchar(100) NOT NULL,
+  supplier varchar(100) NOT NULL,
+  min_stock_alert_qty int(11) NOT NULL,
+  stock_location varchar(100) NOT NULL,
+  created_date date NOT NULL,
+  added_by int(11) NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  ,
+  KEY product_category (category_id,added_by),
+  KEY added_by (added_by)
+);
+
+--
+-- Dumping data for table 'products'
+--
+
+INSERT INTO products (id, `name`, description, barcode, price, quantity, category_id, image, supplier, min_stock_alert_qty, stock_location, created_date, added_by, modified_date) VALUES
+(21, 'abc', 'abc', 'qe', 0.00, 122, 18, '14273718083425.png', 'dikshant.,.,.,!', 122, '4454546646464', '2015-03-25', 1, '2015-03-26 07:10:08'),
+(22, 'abc', 'abc', 'qe', 1000.00, 122, 10, '14274404917800.png', 'dikshant', 12, 'jaipur', '2015-03-25', 1, '2015-03-27 02:14:51'),
+(23, 'pencil', 'thanks', '2345678', 2.00, 200, 18, '14272834716174.png', 'dikshant', 2, 'jaipur', '2015-03-25', 1, '2015-03-25 06:37:51'),
+(29, 'aaaaa', 'Thanks', '222222', 20.00, 100, 16, '14272879808596.png', 'jaipur co', 4, 'jaipur', '2015-03-25', 1, '2015-03-25 07:53:00'),
+(30, 'testing123', 'thanks', '333333333222222', 100.00, 10, 15, '14273599353143.png', 'dikshant', 1, 'jaipur', '2015-03-26', 1, '2015-03-26 03:52:15'),
+(31, 'hi', 'gagagag', '12121221354', 12.00, 10, 10, '14274354369625.png', 'jaipur', 1, 'jaipur', '2015-03-27', 1, '2015-03-27 00:50:36');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'product_categories'
+--
+
+CREATE TABLE IF NOT EXISTS product_categories (
+  id primary key autoincrement,
+  "name" varchar(50) NOT NULL,
+  description text NOT NULL,
+  created_date date NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  
+);
+
+--
+-- Dumping data for table 'product_categories'
+--
+
+INSERT INTO product_categories (id, `name`, description, created_date, modified_date) VALUES
+(10, 'abcd', '01345', '2015-03-24', '2015-03-27 00:31:46'),
+(15, 'Electronics & accessories', '12', '2015-03-24', '2015-03-26 23:44:48'),
+(16, 'abcd', 'hello 123', '2015-03-25', '2015-03-27 02:17:25'),
+(18, 'Furniture', '', '2015-03-25', '2015-03-25 06:10:10');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'roles'
+--
+
+CREATE TABLE IF NOT EXISTS roles (
+  id primary key autoincrement,
+  role_name varchar(50) NOT NULL,
+  
+);
+
+--
+-- Dumping data for table 'roles'
+--
+
+INSERT INTO roles (id, role_name) VALUES
+(2, 'employee');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'taxes'
+--
+
+CREATE TABLE IF NOT EXISTS taxes (
+  id primary key autoincrement,
+  percentage decimal(10,2) NOT NULL,
+  "type" varchar(20) NOT NULL,
+  created_date date NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  
+);
+
+--
+-- Dumping data for table 'taxes'
+--
+
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'time_tracking'
+--
+
+CREATE TABLE IF NOT EXISTS time_tracking (
+  id primary key autoincrement,
+  user_id int(11) NOT NULL,
+  clock_in_time time NOT NULL,
+  clock_out_time time NOT NULL,
+  created_date date NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  ,
+  KEY users_id (user_id)
+);
+
+--
+-- Dumping data for table 'time_tracking'
+--
+
+INSERT INTO time_tracking (id, user_id, clock_in_time, clock_out_time, created_date, modified_date) VALUES
+(1, 1, '03:56:33', '03:57:37', '2015-03-17', '2015-03-17 03:57:37'),
+(2, 1, '01:57:35', '11:12:45', '2015-03-18', '2015-03-18 23:12:45'),
+(3, 1, '03:52:40', '00:00:00', '2015-03-18', '2015-03-18 03:52:40'),
+(4, 1, '03:52:49', '00:00:00', '2015-03-18', '2015-03-18 03:52:49'),
+(5, 1, '03:59:18', '00:00:00', '2015-03-18', '2015-03-18 03:59:18'),
+(6, 1, '04:48:44', '00:00:00', '2015-03-18', '2015-03-18 04:48:44'),
+(7, 1, '04:55:26', '00:00:00', '2015-03-18', '2015-03-18 04:55:26'),
+(8, 1, '05:04:04', '00:00:00', '2015-03-18', '2015-03-18 05:04:04'),
+(9, 1, '05:38:13', '00:00:00', '2015-03-18', '2015-03-18 05:38:13'),
+(10, 1, '06:55:09', '00:00:00', '2015-03-18', '2015-03-18 06:55:09'),
+(11, 1, '06:56:13', '00:00:00', '2015-03-18', '2015-03-18 06:56:13'),
+(12, 1, '06:58:00', '00:00:00', '2015-03-18', '2015-03-18 06:58:00'),
+(13, 1, '06:59:51', '00:00:00', '2015-03-18', '2015-03-18 06:59:51'),
+(14, 1, '07:01:44', '00:00:00', '2015-03-18', '2015-03-18 07:01:44'),
+(15, 1, '07:02:59', '00:00:00', '2015-03-18', '2015-03-18 07:02:59'),
+(16, 1, '07:06:26', '00:00:00', '2015-03-18', '2015-03-18 07:06:26'),
+(17, 1, '07:07:36', '00:00:00', '2015-03-18', '2015-03-18 07:07:36'),
+(18, 1, '07:10:28', '00:00:00', '2015-03-18', '2015-03-18 07:10:28'),
+(19, 1, '07:24:08', '00:00:00', '2015-03-18', '2015-03-18 07:24:08'),
+(20, 1, '07:59:35', '00:00:00', '2015-03-18', '2015-03-18 07:59:35'),
+(21, 1, '11:02:07', '00:00:00', '2015-03-18', '2015-03-18 23:02:07'),
+(22, 1, '07:23:34', '00:00:00', '2015-03-19', '2015-03-19 07:23:34'),
+(23, 1, '11:58:05', '12:36:45', '2015-03-20', '2015-03-20 00:36:45'),
+(24, 1, '12:36:21', '00:00:00', '2015-03-20', '2015-03-20 00:36:21'),
+(25, 1, '04:13:30', '00:00:00', '2015-03-20', '2015-03-20 04:13:30'),
+(26, 1, '04:16:56', '00:00:00', '2015-03-20', '2015-03-20 04:16:56'),
+(27, 1, '04:20:38', '00:00:00', '2015-03-20', '2015-03-20 04:20:38'),
+(28, 1, '04:22:41', '00:00:00', '2015-03-20', '2015-03-20 04:22:41'),
+(29, 1, '04:23:33', '00:00:00', '2015-03-20', '2015-03-20 04:23:33'),
+(30, 1, '02:38:23', '00:00:00', '2015-03-23', '2015-03-23 02:38:23'),
+(31, 1, '04:49:27', '00:00:00', '2015-03-23', '2015-03-23 04:49:27'),
+(32, 1, '05:00:02', '00:00:00', '2015-03-23', '2015-03-23 05:00:02'),
+(33, 1, '05:40:09', '00:00:00', '2015-03-23', '2015-03-23 05:40:09'),
+(34, 1, '06:51:36', '00:00:00', '2015-03-23', '2015-03-23 06:51:36'),
+(35, 1, '05:47:30', '00:00:00', '2015-03-24', '2015-03-24 05:47:30'),
+(36, 1, '06:30:07', '00:00:00', '2015-03-24', '2015-03-24 06:30:07'),
+(37, 1, '06:32:18', '00:00:00', '2015-03-24', '2015-03-24 06:32:18'),
+(38, 1, '07:37:08', '00:00:00', '2015-03-24', '2015-03-24 07:37:08'),
+(39, 1, '08:01:34', '00:00:00', '2015-03-24', '2015-03-24 08:01:34'),
+(40, 1, '08:06:21', '00:00:00', '2015-03-24', '2015-03-24 08:06:21'),
+(41, 1, '09:31:00', '00:00:00', '2015-03-24', '2015-03-24 09:31:00'),
+(42, 1, '11:34:56', '00:00:00', '2015-03-24', '2015-03-24 23:34:56'),
+(43, 1, '11:58:25', '00:00:00', '2015-03-24', '2015-03-24 23:58:25'),
+(44, 1, '12:05:53', '00:00:00', '2015-03-25', '2015-03-25 00:05:53'),
+(45, 1, '12:15:31', '00:00:00', '2015-03-25', '2015-03-25 00:15:31'),
+(46, 1, '06:12:31', '00:00:00', '2015-03-27', '2015-03-27 06:12:31'),
+(47, 1, '07:11:31', '00:00:00', '2015-03-27', '2015-03-27 07:11:31'),
+(48, 1, '08:12:40', '00:00:00', '2015-03-27', '2015-03-27 08:12:40'),
+(49, 1, '12:34:18', '00:00:00', '2015-03-30', '2015-03-30 00:34:18'),
+(50, 1, '12:57:16', '00:00:00', '2015-03-30', '2015-03-30 00:57:16'),
+(51, 1, '12:58:53', '00:00:00', '2015-03-30', '2015-03-30 00:58:53'),
+(52, 1, '01:10:41', '00:00:00', '2015-03-30', '2015-03-30 01:10:41'),
+(53, 1, '01:11:04', '00:00:00', '2015-03-30', '2015-03-30 01:11:04'),
+(54, 1, '01:27:45', '00:00:00', '2015-03-30', '2015-03-30 01:27:45'),
+(55, 1, '01:30:24', '00:00:00', '2015-03-30', '2015-03-30 01:30:24'),
+(56, 1, '01:54:04', '00:00:00', '2015-03-30', '2015-03-30 01:54:04'),
+(57, 1, '05:02:28', '00:00:00', '2015-03-30', '2015-03-30 05:02:28'),
+(58, 1, '05:03:23', '00:00:00', '2015-03-30', '2015-03-30 05:03:23'),
+(59, 1, '05:03:37', '00:00:00', '2015-03-30', '2015-03-30 05:03:37');
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'user'
+--
+
+CREATE TABLE IF NOT EXISTS "user" (
+  id primary key autoincrement,
+  username varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  auth_key varchar(32) COLLATE utf8_unicode_ci NOT NULL,
+  password_hash varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  password_reset_token varchar(255) COLLATE utf8_unicode_ci DEFAULT NULL,
+  email varchar(255) COLLATE utf8_unicode_ci NOT NULL,
+  "status" smallint(6) NOT NULL DEFAULT '10',
+  created_at int(11) NOT NULL,
+  updated_at int(11) NOT NULL,
+  
+);
+
+--
+-- Dumping data for table 'user'
+--
+
+INSERT INTO `user` (id, username, auth_key, password_hash, password_reset_token, email, `status`, created_at, updated_at) VALUES
+(1, 'priyanka', '2TZqRig8VT9ztnmtr2EIHGt39GO7Lzbx', '$2y$13$cVy.EQNaP6r0JN.dfyuM5OXz6Mde8gwg6dpGrsZ6N2NBcs1Jlnhf2', NULL, 'priyanka@ranosys.com', 10, 1426497819, 1426497819);
+
+-- --------------------------------------------------------
+
+--
+-- Table structure for table 'users'
+--
+
+CREATE TABLE IF NOT EXISTS users (
+  id primary key autoincrement,
+  first_name varchar(40) NOT NULL,
+  last_name varchar(40) NOT NULL,
+  email_id varchar(128) NOT NULL,
+  "password" varchar(40) NOT NULL,
+  role_id int(11) NOT NULL,
+  mobile_number varchar(20) NOT NULL,
+  dob date NOT NULL,
+  gender enum('Male','Female') NOT NULL,
+  is_active tinyint(1) NOT NULL,
+  created_date date NOT NULL,
+  modified_date timestamp NOT NULL DEFAULT CURRENT_TIMESTAMP ON UPDATE CURRENT_TIMESTAMP,
+  user_photo varchar(100) NOT NULL,
+  auth_key varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  password_hash varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  access_token varchar(255) CHARACTER SET utf8 COLLATE utf8_unicode_ci NOT NULL,
+  ,
+  UNIQUE KEY email_id (email_id),
+  KEY role_id (role_id)
+);
+
+--
+-- Dumping data for table 'users'
+--
+
+INSERT INTO users (id, first_name, last_name, email_id, `password`, role_id, mobile_number, dob, gender, is_active, created_date, modified_date, user_photo, auth_key, password_hash, access_token) VALUES
+(1, 'priya', 'agarwal', 'admin', 'password1', 2, '12345678', '2015-03-03', 'Female', 1, '2015-03-12', '2015-03-30 05:03:37', '14273510612216.png', '2TZqRig8VT9ztnmtr2EIHGt39GO7Lzbx', '$2y$13$cVy.EQNaP6r0JN.dfyuM5OXz6Mde8gwg6dpGrsZ6N2NBcs1Jlnhf2', 'ac4J-i4jWaYKASsqEGkC7BUskyF7JgSo'),
+(2, 'divya', 'datta', 'gaurav', 'password', 2, '6456465456', '2015-03-16', 'Male', 1, '2015-03-16', '2015-03-25 00:42:44', 'gaurav.jpeg', 'fSuXOOvuoeMm-2l2VoG7Y-PEu-N7_-Fi', '$2y$13$4TYUL5/JkyV7XQ9dUYMUyerh56dVToAe9Yo1w.oGAUGk9IL/gCZQS', 'MmdepiWIsrBnWsZ73_yLxsyqYEQT8NLJ'),
+(3, 'jkljlk', 'lkjlj', 'jhh', 'jkhjh', 2, '67867868', '2012-12-12', 'Male', 0, '2015-03-20', '2015-03-20 06:35:19', '', 'Zcd0xji4C40ydgVUUYoSTdrmBMTJAROg', '$2y$13$XnJKg9eqHQ1LZhjl/VrXeO8tALSn6mKAe/lv4vCmVBYIaeelGSun.', ''),
+(4, 'jkljlk', 'lkjlj', 'hj', 'jkhjh', 2, '67867868', '2012-12-12', 'Male', 0, '2015-03-20', '2015-03-20 06:35:38', '', 'QWWtdUosjKsMMeU2zX0mVuSBjt3c_tQ1', '$2y$13$6AXZj5wxYNQOStZUlHhjXunZAEWMHEv//tzVGHxkOdES1dZ63.286', '');
+
+--
+-- Constraints for dumped tables
+--
+
+--
+-- Constraints for table `customer_redeem_history`
+--
+ALTER TABLE `customer_redeem_history`
+  ADD CONSTRAINT customer_redeem_history_ibfk_1 FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT customer_redeem_history_ibfk_2 FOREIGN KEY (order_id) REFERENCES "orders" (id) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `loyalty_points_history`
+--
+ALTER TABLE `loyalty_points_history`
+  ADD CONSTRAINT loyalty_points_history_ibfk_1 FOREIGN KEY (order_id) REFERENCES "orders" (id) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT loyalty_points_history_ibfk_2 FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `orders`
+--
+ALTER TABLE `orders`
+  ADD CONSTRAINT orders_ibfk_1 FOREIGN KEY (customer_id) REFERENCES customers (id) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT orders_ibfk_2 FOREIGN KEY (employee_id) REFERENCES "users" (id) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `order_items`
+--
+ALTER TABLE `order_items`
+  ADD CONSTRAINT order_items_ibfk_1 FOREIGN KEY (product_id) REFERENCES products (id) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT order_items_ibfk_2 FOREIGN KEY (order_id) REFERENCES "orders" (id) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `products`
+--
+ALTER TABLE `products`
+  ADD CONSTRAINT products_ibfk_1 FOREIGN KEY (category_id) REFERENCES product_categories (id) ON DELETE NO ACTION ON UPDATE CASCADE,
+  ADD CONSTRAINT products_ibfk_2 FOREIGN KEY (added_by) REFERENCES "users" (id) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `time_tracking`
+--
+ALTER TABLE `time_tracking`
+  ADD CONSTRAINT time_tracking_ibfk_1 FOREIGN KEY (user_id) REFERENCES "users" (id) ON DELETE NO ACTION ON UPDATE CASCADE;
+
+--
+-- Constraints for table `users`
+--
+ALTER TABLE `users`
+  ADD CONSTRAINT users_ibfk_1 FOREIGN KEY (role_id) REFERENCES roles (id) ON DELETE NO ACTION ON UPDATE CASCADE;

@@ -1,0 +1,65 @@
+buildscript {
+    repositories {
+        maven { url 'https://maven.fabric.io/public' }
+    }
+
+    dependencies {
+        classpath 'io.fabric.tools:gradle:1.19.1'
+    }
+}
+apply plugin: 'com.android.application'
+apply plugin: 'io.fabric'
+
+repositories {
+    maven { url 'https://maven.fabric.io/public' }
+    maven { url "https://jitpack.io" }
+}
+
+
+android {
+    compileSdkVersion 22
+    buildToolsVersion "22"
+
+    defaultConfig {
+        applicationId "com.printer.epos.rtpl"
+        minSdkVersion 16
+        targetSdkVersion 22
+        versionCode 3
+        versionName "1.8.3"
+    }
+
+    buildTypes {
+        release {
+            minifyEnabled false
+            proguardFiles getDefaultProguardFile('proguard-android.txt'), 'proguard-rules.pro'
+        }
+    }
+}
+
+dependencies {
+    compile fileTree(dir: 'libs', include: ['*.jar'])
+    compile 'de.greenrobot:eventbus:2.4.0'
+    compile 'com.google.code.gson:gson:2.3'
+    compile files('libs/commons-lang3-3.0.jar')
+    compile 'com.android.support:support-v4:22.0.0'
+    compile 'com.android.support:appcompat-v7:22.1.0'
+    compile 'com.googlecode.android-query:android-query:0.25.9'
+    compile 'com.getbase:floatingactionbutton:1.9.0'
+    compile files('libs/universal-image-loader-1.9.3.jar')
+    compile files('libs/ePOS-Device.jar')
+    compile files('libs/ePOS-Print.jar')
+    compile project(':simplecropimagelib')
+    compile 'com.soundcloud.android:android-crop:1.0.0@aar'
+    compile 'com.squareup.retrofit:retrofit:1.9.0'
+    compile 'com.squareup.okhttp:okhttp-urlconnection:2.0.0'
+    compile 'com.squareup.okhttp:okhttp:2.0.0'
+    compile('de.keyboardsurfer.android.widget:crouton:1.8.5@aar') {
+        // exclusion is not necessary, but generally a good idea.
+        exclude group: 'com.google.android', module: 'support-v4'
+    }
+    compile('com.crashlytics.sdk.android:crashlytics:2.3.1@aar') {
+        transitive = true;
+    }
+
+    compile 'com.github.PhilJay:MPAndroidChart:v2.1.2'
+}
